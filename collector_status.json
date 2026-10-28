@@ -1,0 +1,152 @@
+{
+  "last_run_utc": "2026-10-28T07:54:21.529719+00:00",
+  "confirmed_total": 27,
+  "pending_internal": 25,
+  "google_news_added": 0,
+  "publisher_feeds_added": 0,
+  "gdelt_added": 0,
+  "bing_and_alerts_added": 0,
+  "google_news_query_errors": 0,
+  "schema_version": 2,
+  "status_legend": {
+    "ok": "Every request completed without a technical error. This does not guarantee complete monitoring coverage.",
+    "partial": "Some requests completed and some failed.",
+    "error": "Every request failed.",
+    "not_configured": "The connector needs configuration that is missing.",
+    "not_run": "The connector made no requests in this run."
+  },
+  "run": {
+    "started_utc": "2026-10-28T07:51:28.477642+00:00",
+    "finished_utc": "2026-10-28T07:54:21.529859+00:00",
+    "duration_seconds": 173.1,
+    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence/actions/runs/40652765319"
+  },
+  "connectors": {
+    "google_news": {
+      "label": "Google News",
+      "status": "ok",
+      "last_attempt_utc": "2026-10-28T07:52:27.095892+00:00",
+      "last_success_utc": "2026-10-28T07:52:27.095892+00:00",
+      "consecutive_failures": 0,
+      "requests": 42,
+      "failed_requests": 0,
+      "items_fetched": 123,
+      "new_confirmed": 0,
+      "last_error": null
+    },
+    "bing": {
+      "label": "Bing",
+      "status": "ok",
+      "last_attempt_utc": "2026-10-28T07:54:05.246429+00:00",
+      "last_success_utc": "2026-10-28T07:54:05.246429+00:00",
+      "consecutive_failures": 0,
+      "requests": 4,
+      "failed_requests": 0,
+      "items_fetched": 28,
+      "new_confirmed": 0,
+      "last_error": null
+    },
+    "gdelt": {
+      "label": "GDELT",
+      "status": "partial",
+      "last_attempt_utc": "2026-10-28T07:53:53.120318+00:00",
+      "last_success_utc": "2026-10-28T07:53:53.120318+00:00",
+      "consecutive_failures": 0,
+      "requests": 3,
+      "failed_requests": 2,
+      "items_fetched": 0,
+      "new_confirmed": 0,
+      "last_error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    "publisher_rss": {
+      "label": "Publisher RSS",
+      "status": "partial",
+      "last_attempt_utc": "2026-10-28T07:53:32.373141+00:00",
+      "last_success_utc": "2026-10-28T07:53:32.373141+00:00",
+      "consecutive_failures": 0,
+      "requests": 8,
+      "failed_requests": 3,
+      "items_fetched": 112,
+      "new_confirmed": 0,
+      "last_error": "ParseError: not well-formed (invalid token): line 1, column 2583",
+      "feeds": [
+        {
+          "name": "Мілітарний",
+          "status": "ok",
+          "items_fetched": 3,
+          "new_confirmed": 0,
+          "last_error": null
+        },
+        {
+          "name": "Militarnyi",
+          "status": "ok",
+          "items_fetched": 0,
+          "new_confirmed": 0,
+          "last_error": null
+        },
+        {
+          "name": "Defender Media",
+          "status": "error",
+          "items_fetched": 0,
+          "new_confirmed": 0,
+          "last_error": "ParseError: syntax error: line 1, column 0"
+        },
+        {
+          "name": "dev.ua",
+          "status": "ok",
+          "items_fetched": 30,
+          "new_confirmed": 0,
+          "last_error": null
+        },
+        {
+          "name": "ITC.ua",
+          "status": "ok",
+          "items_fetched": 50,
+          "new_confirmed": 0,
+          "last_error": null
+        },
+        {
+          "name": "Euromaidan Press",
+          "status": "ok",
+          "items_fetched": 29,
+          "new_confirmed": 0,
+          "last_error": null
+        },
+        {
+          "name": "РБК-Україна",
+          "status": "error",
+          "items_fetched": 0,
+          "new_confirmed": 0,
+          "last_error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "name": "UNITED24 Media",
+          "status": "error",
+          "items_fetched": 0,
+          "new_confirmed": 0,
+          "last_error": "ParseError: not well-formed (invalid token): line 1, column 2583"
+        }
+      ]
+    },
+    "google_alerts": {
+      "label": "Google Alerts",
+      "status": "not_configured",
+      "last_attempt_utc": null,
+      "last_success_utc": null,
+      "consecutive_failures": 0,
+      "requests": 0,
+      "failed_requests": 0,
+      "items_fetched": 0,
+      "new_confirmed": 0,
+      "last_error": null
+    }
+  },
+  "google_news_verification": {
+    "candidates_checked": 0,
+    "publisher_opened": 0,
+    "publisher_unavailable": 0,
+    "mention_absent": 0,
+    "confirmed": 0,
+    "already_known": 123
+  }
+}
