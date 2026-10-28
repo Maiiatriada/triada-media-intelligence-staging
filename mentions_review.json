@@ -179,6 +179,7 @@
     "status": "review",
     "matched_queries": [
       "\"Artem Veselov\"",
+      "\"Artem Veselov\" \"drone\"",
       "\"Triada Robotics\""
     ],
     "platform": "Media"
