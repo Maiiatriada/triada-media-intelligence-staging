@@ -4,8 +4,10 @@ on:
     branches: [main]
     paths:
       - 'frontend/**'
+      - 'tracker/**'
       - '.github/workflows/dashboard-deploy.yml'
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
   pages: write
@@ -18,19 +20,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main    # the latest data, including the commit the collector has just pushed
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - name: Install dependencies
         working-directory: frontend
         run: npm install --no-audit --no-fund
       - name: Build dashboard
         working-directory: frontend
-        run: npm run build
+        run: npm run build -- --base "/${GITHUB_REPOSITORY#*/}/"
+      - name: Assemble the site (dashboard at /, tracker at /tracker/)
+        run: |
+          mkdir -p site
+          cp -r frontend/dist/. site/
+          python tools/build_tracker.py \
+            --template tracker/tracker.template.html \
+            --data mentions_public.json \
+            --exclusions data/exclusions.json \
+            --flags mentions_flags.json \
+            --decisions data/review_decisions.json \
+            --curated data/mentions_curated.json \
+            --out site/tracker/index.html \
+            --report site/tracker/build_report.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/dist
+          path: site
   deploy:
     environment:
       name: github-pages
