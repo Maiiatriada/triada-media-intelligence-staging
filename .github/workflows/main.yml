@@ -10,6 +10,7 @@ on:
       - 'data/exclusions.json'
       - 'data/mentions_curated.json'
       - 'data/review_decisions.json'
+      - 'data/monitoring.json'
       - 'tools/**'
       - '.github/workflows/main.yml'
   schedule:
@@ -50,6 +51,7 @@ jobs:
       - name: Run media monitoring
         env:
           GOOGLE_ALERTS_RSS: ${{ secrets.GOOGLE_ALERTS_RSS }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           # The run stops, and saves nothing, if the curated mentions or the exclusion list are missing or invalid.
           TRIADA_REQUIRE_CURATED: "1"
         run: python collector.py

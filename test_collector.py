@@ -105,6 +105,8 @@ class CollectorTests(unittest.TestCase):
         self.assertIn("Triada Robotics", entries[0][4])
 
     def test_gdelt_verifies_body_before_publication(self):
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
+        collector.monitoring.PUBLICATION_DATES["https://example.org/triada"] = "2026-10-22T11:00:00+00:00"
         article = {"title": "New drone capabilities",
                    "url": "https://example.org/triada", "domain": "example.org",
                    "seendate": "20261022T110000Z"}
@@ -140,6 +142,8 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(confirmed, {})
 
     def test_bing_rss_accepts_verified_company_article(self):
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
+        collector.monitoring.PUBLICATION_DATES["https://example.org/drone"] = "2026-10-22T11:00:00+00:00"
         import xml.etree.ElementTree as ET
         xml = ET.fromstring("<item><title>Drone technology</title><link>https://example.org/drone</link></item>")
         with patch("collector.fetch_bing_rss", return_value=[xml]), patch(
@@ -337,9 +341,11 @@ class ConnectorDiagnosticsTests(unittest.TestCase):
         self.assertEqual(gdelt["last_error"], "OSError: boom")
 
     def test_gdelt_partial_success_counts_items_and_confirmations(self):
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
+        collector.monitoring.PUBLICATION_DATES["https://example.org/t"] = "2026-10-22T11:00:00+00:00"
         calls = [OSError("boom"), [gdelt_article()], []]
         with patch("collector.fetch_gdelt", side_effect=calls), patch(
-                "collector.read_article", return_value=("", "")):
+                "collector.read_article", return_value=("Triada Robotics", "https://example.org/t")):
             confirmed = {}
             self.assertEqual(collector.collect_gdelt(confirmed, {}), 1)
         gdelt = self.connector("gdelt")
@@ -354,6 +360,8 @@ class ConnectorDiagnosticsTests(unittest.TestCase):
     # ---- Bing ------------------------------------------------------------------
 
     def test_bing_failures_and_confirmations(self):
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
+        collector.monitoring.PUBLICATION_DATES["https://example.org/d"] = "2026-10-22T11:00:00+00:00"
         item = ET.fromstring("<item><title>Drone news</title>"
                              "<link>https://example.org/d</link></item>")
         with patch("collector.fetch_bing_rss", side_effect=OSError("down")), patch(
@@ -505,7 +513,9 @@ class ConnectorDiagnosticsTests(unittest.TestCase):
             return [alert_entry] if name == "Google Alerts" else (
                 [feed_entry] if name == collector.PUBLISHER_FEEDS[0][0] else [])
 
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
         def publisher(url):
+            collector.monitoring.PUBLICATION_DATES[url] = "2026-10-21T09:00:00+00:00"
             return ("Triada Robotics is here", url) if "bing" in url or "alert" in url else ("", "")
 
         status, _, _ = self.run_main(
@@ -960,6 +970,10 @@ class PlatformPreservationTests(unittest.TestCase):
     # ---- hand-added records are read-only -----------------------------------------------
 
     def _paths(self):
+        self.addCleanup(collector.monitoring.PUBLICATION_DATES.clear)
+        def verified_article(url):
+            collector.monitoring.PUBLICATION_DATES[url] = "2026-10-22T11:00:00+00:00"
+            return "Triada Robotics is here", url
         """Every way the media pipeline could reach a record, each built to collide with title + source."""
         feed_name = collector.PUBLISHER_FEEDS[0][0]
         title = "Triada Robotics shows BRAVO"
@@ -972,11 +986,11 @@ class PlatformPreservationTests(unittest.TestCase):
             "publisher feed": dict(source=feed_name, promotes=True, mocks={
                 "feed": lambda n, u: [(title, "https://publisher.example/s", "2026-10-21T09:00:00+00:00", feed_name,
                                        "<p>Triada Robotics is mentioned.</p>")] if n == feed_name else []}),
-            "GDELT": dict(source="gdelt.example", promotes=True, mocks={
+            "GDELT": dict(source="gdelt.example", promotes=True, mocks={"article": verified_article,
                 "gdelt": lambda q: [{"title": title, "url": "https://gdelt.example/a", "domain": "gdelt.example",
                                      "seendate": "20261022T110000Z"}]}),
             "Bing / Alerts": dict(source="Bing Search", promotes=True, mocks={
-                "bing": lambda q: [bing], "publisher": lambda u: ("Triada Robotics is here", u)}),
+                "bing": lambda q: [bing], "publisher": verified_article}),
             "Google News": dict(source="Example Daily", promotes=False, mocks={"fetch": lambda q, r: [google]}),
         }
 

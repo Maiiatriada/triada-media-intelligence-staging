@@ -10,6 +10,7 @@ import hashlib
 import html
 import urllib.parse
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 
 from pathlib import Path
@@ -21,6 +22,7 @@ from html.parser import HTMLParser
 # Shared matching rules (canonical links, exclusion list, duplicate index). Also used by the page build, so both always agree.
 from tools.tmi_keys import DuplicateIndex, canonical_url, matching_exclusion, title_key
 from tools.tmi_keys import is_excluded as tmi_is_excluded
+from tools import monitoring
 
 DATABASE = Path("mentions.json")
 REVIEW = Path("mentions_review.json")
@@ -63,12 +65,12 @@ QUERIES = [
 PUBLISHER_FEEDS = [
     ("Мілітарний", "https://militarnyi.com/uk/feed/"),
     ("Militarnyi", "https://militarnyi.com/en/feed/"),
-    ("Defender Media", "https://thedefender.media/feed/"),
+    ("Defender Media", "https://thedefender.media/uk/wp-json/wp/v2/posts?search=Triada&per_page=100"),
     ("dev.ua", "https://dev.ua/rss"),
     ("ITC.ua", "https://itc.ua/feed/"),
     ("Euromaidan Press", "https://euromaidanpress.com/feed/"),
-    ("РБК-Україна", "https://www.rbc.ua/ukr/rss"),
-    ("UNITED24 Media", "https://united24media.com/rss"),
+    ("РБК-Україна", "https://www.rbc.ua/static/rss/all.ukr.rss.xml"),
+    ("UNITED24 Media", "https://united24media.com/rss/rubrics/latest-news.rss"),
 ]
 
 REGIONS = [
@@ -452,7 +454,7 @@ def _is_hand_added(record):
     """True for a hand-added (or hand-verified) record."""
     if not isinstance(record, dict):
         return False
-    if record.get("origin") == "manual" or has_social_platform(record) or has_hand_written_id(record):
+    if record.get("origin") == "manual" or (has_social_platform(record) and record.get("origin") != "collector") or has_hand_written_id(record):
         return True
     method = str(record.get("verification_method") or "")
     if method.startswith("manual") or method == "publisher_or_notion_source":
@@ -484,6 +486,8 @@ def record_key(record):
     """Identity of a record. Records the collector made: title + source, exactly as before.
     A record with a hand-written id IS that id: two different posts with identical text (two Telegram posts, a Telegram post and a
     TikTok video, ...) are different records and must never be merged. A hand-made record without a title or source keeps its own id."""
+    if record.get("identity_version") == "url-v1" and record.get("url"):
+        return monitoring.identity(record["url"])
     if has_hand_written_id(record):
         return str(record["id"])
     if "title" in record and "source" in record:
@@ -942,7 +946,7 @@ def fetch_bing_rss(query):
         url, headers={"User-Agent": "Mozilla/5.0"}
     )
     with urllib.request.urlopen(request, timeout=15) as response:
-        root = ET.fromstring(response.read(2_000_000))
+        root = ET.fromstring(response.read(12_000_000))
     return root.findall("./channel/item")
 
 
@@ -1001,14 +1005,18 @@ def collect_web_rss(confirmed, pending):
         key = article_id(title, source)
         if key in confirmed or is_protected(pending.get(key)):
             continue
-        # Bing RSS may omit dates: use collection date only as fallback.
-        if not published:
-            published = __import__("datetime").datetime.now(timezone.utc).isoformat()
+        # Discovery time must never masquerade as the publication date.
+        published = monitoring.PUBLICATION_DATES.get(direct or resolved) or published
         record = {"id": key, "title": title, "source": source,
                   "published_at": published, "url": direct or resolved,
                   "direct_url": direct or resolved, "keyword": source,
                   "status": "relevant", "verification_method": "verified_web_article"}
         record.update(match)
+        if not published:
+            record.update(status="review", origin="collector", review_reason="publication_date_required")
+            pending[key] = record
+            continue
+        record["date_source"] = "publisher_metadata_or_feed"
         confirmed[key] = record
         pending.pop(key, None)
         added += 1
@@ -1037,6 +1045,7 @@ def read_article(url):
             if publisher:
                 return read_publisher(publisher)
             return "", ""
+        monitoring.remember_date(page, final_url)
         return extract_article(page), final_url
     except Exception:
         return "", ""
@@ -1063,7 +1072,9 @@ def read_publisher(url):
                 return "", ""
             raw = response.read(2_000_000)
             charset = response.headers.get_content_charset() or "utf-8"
-        return extract_article(raw.decode(charset, errors="replace")), final_url
+        page = raw.decode(charset, errors="replace")
+        monitoring.remember_date(page, final_url)
+        return extract_article(page), final_url
     except Exception:
         return "", ""
 
@@ -1093,7 +1104,18 @@ def fetch_publisher_feed(name, url):
     """Read RSS/Atom, including publisher-authored article content."""
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(request, timeout=12) as response:
-        root = ET.fromstring(response.read(2_000_000))
+        raw = response.read(12_000_000)
+    # This publisher exposes WordPress JSON instead of an RSS feed.
+    if monitoring.host(url) == "thedefender.media" and "/wp-json/wp/v2/posts" in url:
+        entries = []
+        for item in json.loads(raw):
+            date = monitoring.published(str(item.get("date_gmt") or "") + "Z")
+            link = item.get("link") or ""
+            title = html.unescape(item.get("title", {}).get("rendered") or "")
+            if date and date[:10] >= START_DATE and title and monitoring.host(link) == "thedefender.media":
+                entries.append((title, link, date, name, item.get("content", {}).get("rendered") or ""))
+        return entries
+    root = ET.fromstring(raw)
 
     entries = []
     atom = "{http://www.w3.org/2005/Atom}"
@@ -1162,6 +1184,10 @@ def match_publisher_feed(confirmed, pending, entries):
         match = title_match or feed_match
         verification_method = "publisher_feed_title" if title_match else "publisher_feed_body"
 
+        # Long publisher-authored feed bodies are checked directly. Avoid fetching
+        # hundreds of unrelated full articles; short summaries still get a page check.
+        if not match and len(feed_text) >= 1000:
+            continue
         # Read the original article if the feed does not contain a relevant mention.
         direct = ""
         if not match:
@@ -1198,9 +1224,21 @@ def fetch_gdelt(query):
         "https://api.gdeltproject.org/api/v2/doc/doc?" + params,
         headers={"User-Agent": "TRIADA-Media-Monitor/1.0"}
     )
-    with urllib.request.urlopen(request, timeout=20) as response:
-        data = json.load(response)
-    return data.get("articles", [])
+    # Space requests to the public endpoint; retry a rate limit once, bounded.
+    time.sleep(5)
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                data = json.load(response)
+            return data.get("articles", [])
+        except urllib.error.HTTPError as error:
+            if error.code != 429 or attempt:
+                raise
+            try:
+                delay = min(30, max(5, int(error.headers.get("Retry-After", "10"))))
+            except (ValueError, TypeError):
+                delay = 10
+            time.sleep(delay)
 
 
 def collect_gdelt(confirmed, pending):
@@ -1232,12 +1270,11 @@ def collect_gdelt(confirmed, pending):
             match = body_match or title_match
             if not match:
                 continue
-            # GDELT dates are UTC YYYYMMDDTHHMMSSZ.
-            try:
-                published = __import__("datetime").datetime.strptime(
-                    date[:15], "%Y%m%dT%H%M%S"
-                ).replace(tzinfo=timezone.utc).isoformat()
-            except ValueError:
+            published = monitoring.PUBLICATION_DATES.get(direct_url or url)
+            if not published or not body or not direct_url:
+                pending[key] = {"id": key, "title": title, "source": source, "url": url,
+                                "published_at": "", "status": "review", "origin": "collector",
+                                "review_reason": "publication_date_required", "discovered_at": date}
                 continue
             if published[:10] < START_DATE:
                 continue
@@ -1345,8 +1382,8 @@ def _run():
 
     # Recheck previously unverified articles.
     for key, record in list(pending.items()):
-        if is_protected(record):
-            continue  # hand-added records are not media candidates
+        if is_protected(record) or record.get("origin") == "collector" and (has_social_platform(record) or record.get("review_reason") == "publication_date_required"):
+            continue  # social candidates need native verification, never the media shortcut
         title_match = classify(record["title"])
 
         if title_match:
@@ -1512,6 +1549,9 @@ def _run():
     web_added = collect_web_rss(confirmed, pending)
     print(f"Verified from Bing and Alerts: {web_added}", flush=True)
 
+    channel_report = monitoring.collect(confirmed, pending, classify, fetch_bing_rss)
+    monitoring.enforce_scope(confirmed, pending, is_protected)
+
     for title in restore_manual(confirmed, pending, manual_snapshot):
         print(f"WARNING: restored a hand-added record that a collection step changed or removed: {title}", flush=True)
 
@@ -1537,6 +1577,7 @@ def _run():
         "google_news_query_errors": errors,
     }
     report.update(build_diagnostics_report())
+    report["channel_monitoring"] = channel_report
     report["protection"] = {
         "curated_total": len(curated),
         "exclusion_entries": exclusion_file_entries,
