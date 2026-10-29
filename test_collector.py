@@ -2,6 +2,7 @@ import contextlib
 import io
 import json
 import os
+import re
 import tempfile
 import unittest
 import urllib.parse
@@ -932,11 +933,21 @@ class PlatformPreservationTests(unittest.TestCase):
     # ---- design that is relied on -----------------------------------------------
 
     def test_public_file_is_rebuilt_from_the_master_files_only(self):
-        # Hand-added mentions belong in mentions.json (like the existing manual ones);
-        # mentions_public.json is regenerated on every run.
-        stale_public = [mention("Only in public", "Somewhere", "LinkedIn")]
+        # An ORDINARY record (one the collector itself would have made) that only the public file knows is still dropped:
+        # mentions_public.json is a rebuilt file. (Hand-added records are different: see the next test.)
+        stale_public = [mention("Only in public", "Somewhere")]
         out = self.run_main(confirmed=[mention("Kept", "S")], public=stale_public)
         self.assertEqual([r["title"] for r in out["public"]], ["Kept"])
+
+    def test_a_hand_added_record_that_only_the_public_file_holds_is_carried_forward(self):
+        # CONTRACT CHANGE (28 Oct 2026). The old test here expected a LinkedIn record that existed only in mentions_public.json
+        # to be dropped. That is exactly how 119 hand-added mentions were lost on 24 Oct 2026. Protected records now survive
+        # wherever they are, and the run says so.
+        stale_public = [mention("Only in public", "Somewhere", "LinkedIn")]
+        out = self.run_main(confirmed=[mention("Kept", "S")], public=stale_public)
+        self.assertEqual(sorted(r["title"] for r in out["public"]), ["Kept", "Only in public"])
+        self.assertIn("carried forward a hand-added record", out["log"])
+        self.assertEqual(out["status"]["protection"]["carried_from_public"], 1)
 
     def test_diagnostics_and_old_status_keys_are_unaffected(self):
         out = self.run_main(confirmed=[mention("A", "S", "LinkedIn")])
@@ -1101,6 +1112,400 @@ class PlatformPreservationTests(unittest.TestCase):
         self.assertEqual({r["title"] for r in out["confirmed"]}, {r["title"] for r in confirmed})
         self.assertEqual({r["title"] for r in out["review"]}, {r["title"] for r in review})
         self.assertEqual(out["status"]["connectors"]["google_news"]["status"], "error")
+
+
+# ======================================================================================================================
+# Curated mentions, permanent exclusions, shared-link flags and the safety stop (added 28 Oct 2026)
+# ======================================================================================================================
+
+import datetime as _dt
+import hashlib as _hashlib
+
+FIXTURES = Path(__file__).resolve().parent / "tests" / "fixtures"
+
+
+def fixture(name):
+    return json.loads((FIXTURES / name).read_text(encoding="utf-8"))
+
+
+def curated_record(rid, title, source, url, platform="Media", published="2026-08-02T12:00:00+00:00", **over):
+    d = _dt.datetime.fromisoformat(published)
+    record = {"id": rid, "title": title, "source": source, "url": url, "published_at": published, "platform": platform,
+              "status": "relevant", "origin": "manual", "categories": ["Company"], "keyword": "manual_curated",
+              "verification_method": "manual_owner_review",
+              "tracker": {"ts": int(d.timestamp() * 1000), "day": d.strftime("%Y-%m-%d"),
+                          "date_label": d.strftime("%d %b %Y"), "company": True, "ceo": False}}
+    record.update(over)
+    return record
+
+
+def exclusion_entry(eid, urls, collector_ids=(), title="x", source="s", kind="removed"):
+    return {"id": eid, "scope": "permanent", "kind": kind, "platform": "Media", "title": title, "source": source,
+            "urls": list(urls), "collector_ids": list(collector_ids), "match_by_title": False}
+
+
+def google_item(title, link, source="Example Daily", date="Wed, 21 Oct 2026 09:00:00 GMT"):
+    return ET.fromstring(f"<item><title>{title}</title><link>{link}</link><pubDate>{date}</pubDate><source>{source}</source></item>")
+
+
+class CuratedProtectionTests(unittest.TestCase):
+    def setUp(self):
+        collector.DIAG.reset()
+        self.addCleanup(collector.DIAG.reset)
+        quiet = contextlib.redirect_stdout(io.StringIO())
+        quiet.__enter__()
+        self.addCleanup(quiet.__exit__, None, None, None)
+        env = patch.dict(os.environ, {"GOOGLE_ALERTS_RSS": ""})
+        env.start()
+        self.addCleanup(env.stop)
+        self.addCleanup(setattr, collector, "ACTIVE_EXCLUSIONS", None)
+
+    def workdir(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        original = os.getcwd()
+        os.chdir(tmp.name)
+        self.addCleanup(os.chdir, original)
+        return Path(tmp.name)
+
+    def seed(self, confirmed=(), review=(), public=None, curated=None, exclusions=None):
+        write = lambda name, data: Path(name).write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        write("mentions.json", list(confirmed))
+        write("mentions_review.json", list(review))
+        if public is not None:
+            write("mentions_public.json", list(public))
+        if curated is not None or exclusions is not None:
+            Path("data").mkdir(exist_ok=True)
+            write("data/mentions_curated.json", list(curated or []))
+            write("data/exclusions.json", exclusions if exclusions is not None else {"entries": []})
+
+    def execute(self, fetch=None, feed=None, gdelt=None, bing=None, article=None, publisher=None):
+        log = io.StringIO()
+        with patch("collector.fetch", side_effect=fetch or (lambda q, r: [])), \
+                patch("collector.fetch_publisher_feed", side_effect=feed or (lambda n, u: [])), \
+                patch("collector.fetch_gdelt", side_effect=gdelt or (lambda q: [])), \
+                patch("collector.fetch_bing_rss", side_effect=bing or (lambda q: [])), \
+                patch("collector.read_article", side_effect=article or (lambda u: ("", ""))), \
+                patch("collector.read_publisher", side_effect=publisher or (lambda u: ("", ""))), \
+                patch("collector.resolve_google_news", side_effect=lambda url: url), \
+                patch("collector.time.sleep"), \
+                contextlib.redirect_stdout(log):
+            collector.main()
+        return log.getvalue()
+
+    def read(self, name):
+        return json.loads(Path(name).read_text(encoding="utf-8"))
+
+    def run_main(self, confirmed=(), review=(), public=None, curated=None, exclusions=None, rounds=1, **mocks):
+        self.workdir()
+        self.seed(confirmed, review, public, curated, exclusions)
+        for _ in range(rounds):
+            log = self.execute(**mocks)
+        return {"confirmed": self.read("mentions.json"), "review": self.read("mentions_review.json"), "public": self.read("mentions_public.json"),
+                "status": self.read("collector_status.json"), "flags": self.read("mentions_flags.json")["flags"], "log": log}
+
+    # ---- 1. the curated layer is protected ------------------------------------------------------------------------------
+
+    def test_every_curated_record_is_in_the_public_file_exactly_as_written(self):
+        curated = [curated_record(f"hist-{i}", f"Post {i}", "Src", f"https://c.example/{i}", platform=p)
+                   for i, p in enumerate(("Media", "LinkedIn", "Telegram"))]
+        out = self.run_main(curated=curated)
+        self.assertEqual(out["public"], curated)
+
+    def test_the_curated_file_is_never_written(self):
+        curated = [curated_record("hist-1", "A", "S", "https://c.example/1")]
+        self.workdir(); self.seed(curated=curated)
+        before = _hashlib.sha256(Path("data/mentions_curated.json").read_bytes()).hexdigest()
+        self.execute(fetch=lambda q, r: [google_item("Triada Robotics news", "https://n.example/1")])
+        self.assertEqual(_hashlib.sha256(Path("data/mentions_curated.json").read_bytes()).hexdigest(), before)
+
+    def test_discovery_cannot_touch_a_curated_record(self):
+        title = "Triada Robotics shows BRAVO"
+        curated = [curated_record("hist-9", title, "Example Daily", "https://hand.example/post")]
+        out = self.run_main(curated=curated, fetch=lambda q, r: [google_item(title, "https://news.example/a")],
+                            article=lambda u: ("Triada Robotics said so.", "https://redirect.example/x"))
+        self.assertEqual(out["public"][0], curated[0])
+        self.assertEqual([r["id"] for r in out["public"]].count("hist-9"), 1)
+
+    def test_the_curated_layer_survives_two_consecutive_runs_identically(self):
+        curated = [curated_record(f"hist-{i}", f"Post {i}", "Src", f"https://c.example/{i}") for i in range(5)]
+        feed = lambda q, r: [google_item("Triada Robotics new find", "https://n.example/new")]
+        once = self.run_main(curated=curated, confirmed=[mention("Kept", "S")], fetch=feed, article=lambda u: ("Triada Robotics", "https://n.example/new"))
+        twice = self.run_main(curated=curated, confirmed=[mention("Kept", "S")], fetch=feed, article=lambda u: ("Triada Robotics", "https://n.example/new"), rounds=2)
+        for name in ("confirmed", "review", "public", "flags"):
+            self.assertEqual(once[name], twice[name], name)
+
+    # ---- 2. exclusions are respected ----------------------------------------------------------------------------------------
+
+    def test_an_excluded_record_already_in_a_file_stays_there_untouched_and_is_not_public(self):
+        record = mention("Starlink roaming changes", "Мілітарний", status="review", url="https://g.example/CBM1?oc=5")
+        excl = {"entries": [exclusion_entry("ex-1", [record["url"]], [record["id"]])]}
+        out = self.run_main(review=[record], curated=[curated_record("hist-1", "A", "S", "https://c.example/1")], exclusions=excl,
+                            article=lambda u: ("Triada Robotics is here", "https://publisher.example/x"))   # would promote an ordinary record
+        self.assertEqual(out["review"], [dict(record, platform="Media")])      # not deleted, not promoted, not rewritten
+        self.assertEqual(out["confirmed"], [])
+        self.assertNotIn(record["id"], [r["id"] for r in out["public"]])
+        self.assertEqual(out["status"]["protection"]["excluded_hidden"], 1)
+
+    def test_a_newly_found_excluded_article_is_not_saved_anywhere(self):
+        link = "https://news.example/removed-by-hand"
+        excl = {"entries": [exclusion_entry("ex-1", [link])]}
+        out = self.run_main(curated=[curated_record("hist-1", "A", "S", "https://c.example/1")], exclusions=excl,
+                            fetch=lambda q, r: [google_item("Triada Robotics BRAVO", link)], article=lambda u: ("Triada Robotics", link))
+        self.assertEqual((out["confirmed"], out["review"]), ([], []))
+        self.assertEqual([r["id"] for r in out["public"]], ["hist-1"])
+        self.assertGreaterEqual(out["status"]["protection"]["new_finds_excluded"], 1)
+
+    def test_an_excluded_collector_copy_does_not_exclude_the_curated_article_with_the_same_title(self):
+        curated = [curated_record("manual-1", "What Battle-Tested Really Means", "UNITED24 Media", "https://united24media.com/opinion/x")]
+        copy_ = mention("What Battle-Tested Really Means - UNITED24 Media", "UNITED24 Media", status="review", url="https://news.google.com/rss/articles/CBMxyz?oc=5")
+        excl = {"entries": [exclusion_entry("ex-4", [copy_["url"]], [copy_["id"]], kind="duplicate_copy_removed")]}
+        out = self.run_main(review=[copy_], curated=curated, exclusions=excl)
+        self.assertEqual([r["id"] for r in out["public"]], ["manual-1"])      # the kept article stays, the copy stays out
+
+    # ---- 3. distinct posts with identical titles are never merged -----------------------------------------------------------
+
+    def test_curated_posts_with_identical_text_and_source_all_survive(self):
+        t, s = "Схожий? Тільки хвіст трохи інший", "Спалахуйка.ua"
+        curated = [curated_record("hist-1", t, s, "https://t.me/spalahUKR/100667", "Telegram"),
+                   curated_record("hist-2", t, s, "https://t.me/spalahUKR/100657", "Telegram"),
+                   curated_record("b24-r9", "Unidentified drone", "Clash Report", "https://t.me/ClashReport/91362", "Telegram"),
+                   curated_record("b24-r10", "Unidentified drone", "Clash Report", "https://www.tiktok.com/@clashreport/video/7669761503951654164", "TikTok")]
+        out = self.run_main(curated=curated)
+        self.assertEqual([r["id"] for r in out["public"]], ["hist-1", "hist-2", "b24-r9", "b24-r10"])
+
+    def test_two_hand_written_records_with_identical_text_in_a_collector_file_stay_two_records(self):
+        one = manual_mention("Same post", "Same source", "id", url="https://one.example/p", platform="Telegram")
+        two = dict(manual_mention("Same post", "Same source", "id", url="https://two.example/p", platform="Telegram"), id="manual-second")
+        out = self.run_main(confirmed=[one, two])
+        self.assertEqual(sorted(r["url"] for r in out["confirmed"]), ["https://one.example/p", "https://two.example/p"])
+        self.assertEqual(len(out["public"]), 2)
+
+    def test_a_media_find_is_not_a_duplicate_of_a_curated_social_post_with_the_same_text(self):
+        curated = [curated_record("b24-r9", "Unidentified drone", "Clash Report", "https://t.me/ClashReport/91362", "Telegram")]
+        out = self.run_main(curated=curated, fetch=lambda q, r: [google_item("Triada Robotics unidentified drone", "https://n.example/x", "Clash Report")],
+                            article=lambda u: ("Triada Robotics", "https://n.example/x"))
+        titles = [r["title"] for r in out["public"]]
+        self.assertIn("Unidentified drone", titles)
+        # a same-text Media find (title identical to the Telegram post) is kept as its own record, not folded into the Telegram post
+        out2 = self.run_main(curated=curated, review=[mention("Unidentified drone", "Clash Report", url="https://n.example/y", status="review")])
+        self.assertEqual(sorted(r["platform"] for r in out2["public"]), ["Media", "Telegram"])
+
+    def test_the_same_article_under_another_link_is_a_duplicate_only_between_media_records(self):
+        curated = [curated_record("manual-1", "Bravo: Can It Catch Up to Russia?", "Militär Aktuell", "https://militaeraktuell.at/en/bravo/")]
+        google_copy = mention("Bravo: Can It Catch Up to Russia? - Militär Aktuell", "Militär Aktuell", url="https://news.google.com/rss/articles/CBM1?oc=5", status="relevant")
+        out = self.run_main(curated=curated, confirmed=[google_copy])
+        self.assertEqual([r["id"] for r in out["public"]], ["manual-1"])
+        self.assertEqual(out["status"]["protection"]["duplicates_hidden"], 1)
+        self.assertEqual(len(out["confirmed"]), 1)           # hidden from the public file, never deleted from its own file
+
+    # ---- 4. records that share one link are flagged, never deleted ------------------------------------------------------------
+
+    def test_two_records_sharing_one_google_news_link_are_flagged_and_both_kept(self):
+        link = "https://news.google.com/rss/articles/CBMsharedlink?oc=5"
+        a = mention("30 grants for defence startups", "Defender Media", status="review", url=link)
+        b = mention("VD Accelerator 2.0: grants", "Defender Media", status="review", url=link)
+        excl = {"entries": [exclusion_entry("ex-7", [link], [a["id"], b["id"]])]}
+        out = self.run_main(review=[a, b], curated=[curated_record("hist-1", "A", "S", "https://c.example/1")], exclusions=excl)
+        self.assertEqual(sorted(r["id"] for r in out["review"]), sorted([a["id"], b["id"]]))       # neither deleted
+        self.assertEqual(len(out["flags"]), 1)
+        flag = out["flags"][0]
+        self.assertEqual(flag["type"], "shared_link")
+        self.assertEqual(sorted(r["id"] for r in flag["records"]), sorted([a["id"], b["id"]]))
+        self.assertTrue(all(r["excluded_by"] == "ex-7" for r in flag["records"]))
+        self.assertEqual(out["status"]["protection"]["shared_link_flags"], 1)
+        self.assertIn("REVIEW FLAG", out["log"])
+
+    def test_two_curated_records_sharing_one_link_are_both_shown_and_flagged(self):
+        link = "https://news.google.com/rss/articles/CBMresonance?oc=5"
+        curated = [curated_record("auto-1", "В Україні випробують реактивний безпілотник", "Резонанс UA", link),
+                   curated_record("auto-1-dup2", "В Україні випробують реактивний безпілотник", "resonance.ua", link)]
+        out = self.run_main(curated=curated)
+        self.assertEqual([r["id"] for r in out["public"]], ["auto-1", "auto-1-dup2"])
+        self.assertEqual(len(out["flags"]), 1)
+        self.assertTrue(all(r["curated"] for r in out["flags"][0]["records"]))
+
+    def test_a_new_media_record_from_the_same_source_and_day_as_a_curated_one_is_flagged_but_still_shown(self):
+        curated = [curated_record("manual-1", "Artem Veselov interview (September 28)", "Militär Aktuell", "https://militaeraktuell.at/en/interview/", published="2026-09-28T12:00:00+00:00")]
+        found = mention("Artem Veselov, Triada Robotics: the market is moving", "Militär Aktuell", url="https://news.google.com/rss/articles/CBMnew?oc=5", published_at="2026-09-28T10:00:00+00:00")
+        out = self.run_main(curated=curated, confirmed=[found])
+        self.assertEqual([r["id"] for r in out["public"]].count(found["id"]), 1)             # shown, not hidden
+        self.assertEqual([f["type"] for f in out["flags"]], ["possible_duplicate"])
+        self.assertEqual(sorted(r["curated"] for r in out["flags"][0]["records"]), [False, True])
+        self.assertEqual(len(out["confirmed"]), 1)                                          # and not deleted
+
+    def test_a_collector_copy_of_a_curated_article_is_explained_not_flagged(self):
+        link = "https://publisher.example/a"
+        out = self.run_main(curated=[curated_record("manual-1", "Same article", "Pub", link)],
+                            confirmed=[mention("Same article - Pub", "Pub", url=link)])
+        self.assertEqual(out["flags"], [])
+
+    # ---- 5. the safety stop --------------------------------------------------------------------------------------------------
+
+    def snapshot_files(self):
+        return {p.name: p.read_bytes() for p in Path(".").glob("*.json")}
+
+    def test_a_run_that_would_drop_a_curated_record_stops_and_saves_nothing(self):
+        curated = [curated_record(f"hist-{i}", f"Post {i}", "S", f"https://c.example/{i}") for i in range(3)]
+        self.workdir(); self.seed(confirmed=[mention("Kept", "S")], curated=curated, public=[])
+        before = self.snapshot_files()
+        real = collector.assemble_public
+        def buggy(*args):
+            public, stats, carried = real(*args)
+            public.pop("hist-1")
+            return public, stats, carried
+        with patch("collector.assemble_public", side_effect=buggy), self.assertRaises(RuntimeError) as caught:
+            self.execute()
+        self.assertIn("would disappear", str(caught.exception))
+        self.assertEqual(self.snapshot_files(), before)                    # nothing was written
+        self.assertFalse(Path("mentions_flags.json").exists())
+
+    def test_a_run_that_would_shrink_the_public_file_by_more_than_ten_percent_stops(self):
+        previous = [mention(f"Candidate {i}", "S", status="review") for i in range(10)]
+        self.workdir(); self.seed(confirmed=[mention("Only one", "S")], public=previous)
+        before = self.snapshot_files()
+        with self.assertRaises(RuntimeError) as caught:
+            self.execute()
+        self.assertIn("would shrink from 10 to 1", str(caught.exception))
+        self.assertEqual(self.snapshot_files(), before)
+        with patch.dict(os.environ, {"TRIADA_ALLOW_SHRINK": "1"}):         # a deliberate, explicit override
+            self.execute()
+        self.assertEqual(len(self.read("mentions_public.json")), 1)
+
+    def test_a_missing_curated_file_stops_the_run_when_the_data_folder_exists(self):
+        self.workdir(); self.seed(confirmed=[mention("Kept", "S")])
+        Path("data").mkdir()
+        before = self.snapshot_files()
+        with self.assertRaises(ValueError) as caught:
+            self.execute()
+        self.assertIn("is required but missing", str(caught.exception))
+        self.assertEqual(self.snapshot_files(), before)
+
+    def test_an_invalid_curated_file_stops_the_run(self):
+        bad = [curated_record("hist-1", "A", "S", "https://c.example/1"), curated_record("hist-1", "B", "S", "https://c.example/2")]
+        self.workdir(); self.seed(curated=bad)
+        with self.assertRaises(ValueError) as caught:
+            self.execute()
+        self.assertIn("Duplicate curated id", str(caught.exception))
+        for broken in (dict(bad[0], id=collector.article_id("A", "S")), {k: v for k, v in bad[0].items() if k != "url"}):
+            self.seed(curated=[broken])
+            with self.assertRaises(ValueError):
+                self.execute()
+
+    # ---- 6. the 24 Oct 2026 loss cannot repeat ---------------------------------------------------------------------------------
+
+    def test_the_24_october_loss_cannot_repeat(self):
+        """The real incident: 167 records in the public file, only the collector's own files besides. Every hand-added one must come out."""
+        before = fixture("repo_public_167_before_24Oct_loss.json")
+        protected = [r for r in before if collector._is_hand_added(r)]
+        self.assertGreaterEqual(len(protected), 100)
+        out = self.run_main(confirmed=fixture("repo_mentions_2026-10-28.json"), review=fixture("repo_review_2026-10-28.json"), public=before)
+        ids = {r["id"] for r in out["public"]}
+        self.assertEqual([r["id"] for r in protected if r["id"] not in ids], [])
+        self.assertEqual(out["status"]["protection"]["carried_from_public"] + sum(1 for r in protected if r["id"] in {x["id"] for x in out["confirmed"] + out["review"]}), len(protected))
+
+    # ---- 6b. from the collector's output to the page ---------------------------------------------------------------------------
+
+    def test_the_page_built_from_the_collectors_output_shows_curated_and_new_relevant_records_only(self):
+        from tools import build_tracker
+        template = FIXTURES.parent.parent / "tracker" / "tracker.template.html"
+        curated = [curated_record("hist-1", "Curated A", "Src", "https://c.example/1"), curated_record("hist-2", "Curated B", "Src", "https://c.example/2", "Telegram")]
+        removed = mention("Removed by hand", "Pub", status="review", url="https://g.example/removed")
+        excl = {"entries": [exclusion_entry("ex-1", [removed["url"]], [removed["id"]])]}
+        items = [google_item("Triada Robotics new verified article", "https://de.example/new", "Defense Express"),
+                 google_item("Triada Robotics candidate only", "https://de.example/cand", "Defense Express")]
+        read = lambda u: ("Triada Robotics is here", u) if u.endswith("/new") else ("", "")
+        out = self.run_main(curated=curated, review=[removed], exclusions=excl, fetch=lambda q, r: items, article=read)
+        Path("site").mkdir()
+        build_tracker.main(["--template", str(template), "--data", "mentions_public.json", "--exclusions", "data/exclusions.json", "--curated", "data/mentions_curated.json", "--out", "site/index.html"])
+        page = Path("site/index.html").read_text(encoding="utf-8")
+        titles = re.findall(r'<span class="t"[^>]*>(.*?)</span>', page)
+        self.assertEqual(sorted(titles), sorted(["Curated A", "Curated B", "Triada Robotics new verified article"]))   # review candidate and excluded record stay out
+        self.assertEqual(page.count('<span data-count="shown">3</span> of 3 mentions'), 2)
+
+    # ---- 6c. possible duplicates are held for the owner's answer ---------------------------------------------------------------------
+
+    def possible_duplicate_setup(self):
+        curated = [curated_record("manual-1", "Artem Veselov interview (September 28)", "Militär Aktuell", "https://militaeraktuell.at/en/interview/", published="2026-09-28T12:00:00+00:00")]
+        found = mention("Artem Veselov, Triada Robotics: the market is moving", "Militär Aktuell", url="https://news.google.com/rss/articles/CBMnew?oc=5", published_at="2026-09-28T10:00:00+00:00")
+        return curated, found
+
+    def write_decisions(self, *pairs):
+        Path("data/review_decisions.json").write_text(json.dumps({"schema_version": 1, "decisions": [{"id": i, "decision": d} for i, d in pairs]}), encoding="utf-8")
+
+    def test_an_invalid_review_decisions_file_stops_the_run_and_saves_nothing(self):
+        curated, found = self.possible_duplicate_setup()
+        self.workdir(); self.seed(confirmed=[found], curated=curated)
+        self.write_decisions((found["id"], "maybe"))
+        before = self.snapshot_files()
+        with self.assertRaises(ValueError) as caught:
+            self.execute()
+        self.assertIn("Invalid review decision", str(caught.exception))
+        self.assertEqual(self.snapshot_files(), before)
+
+    def test_a_not_duplicate_answer_ends_the_flag_and_the_record_stays_public(self):
+        curated, found = self.possible_duplicate_setup()
+        self.workdir(); self.seed(confirmed=[found], curated=curated); self.write_decisions((found["id"], "not_duplicate"))
+        self.execute()
+        self.assertEqual(self.read("mentions_flags.json")["flags"], [])
+        self.assertIn(found["id"], [r["id"] for r in self.read("mentions_public.json")])
+        self.assertEqual(self.read("collector_status.json")["protection"]["review_decisions"], 1)
+
+    def test_a_duplicate_answer_hides_the_record_for_good_but_never_deletes_it_from_its_file(self):
+        curated, found = self.possible_duplicate_setup()
+        self.workdir(); self.seed(confirmed=[found], curated=curated); self.write_decisions((found["id"], "duplicate"))
+        self.execute()
+        self.assertNotIn(found["id"], [r["id"] for r in self.read("mentions_public.json")])
+        self.assertEqual([r["id"] for r in self.read("mentions.json")], [found["id"]])               # still in the collector's own file
+        self.assertEqual(self.read("collector_status.json")["protection"]["confirmed_duplicates"], 1)
+        self.assertEqual(self.read("mentions_flags.json")["flags"], [])
+
+    def test_the_first_real_build_is_exactly_the_311_and_holds_the_28_september_article(self):
+        from tools import build_tracker
+        template = FIXTURES.parent.parent / "tracker" / "tracker.template.html"
+        curated, excl = fixture("curated_311.json"), fixture("exclusions_14.json")
+        self.run_main(confirmed=fixture("repo_mentions_2026-10-28.json"), review=fixture("repo_review_2026-10-28.json"), public=fixture("repo_public_2026-10-28.json"), curated=curated, exclusions=excl)
+        self.write_decisions()
+        def build():
+            Path("site").mkdir(exist_ok=True)
+            build_tracker.main(["--template", str(template), "--data", "mentions_public.json", "--exclusions", "data/exclusions.json", "--flags", "mentions_flags.json",
+                                "--decisions", "data/review_decisions.json", "--curated", "data/mentions_curated.json", "--out", "site/index.html", "--report", "site/report.json"])
+            return len(re.findall(r"<tr\b[^>]*\bdata-ts=", Path("site/index.html").read_text(encoding="utf-8"))), json.loads(Path("site/report.json").read_text(encoding="utf-8"))
+        rows, report = build()
+        self.assertEqual(rows, 311)                                                                  # exactly the approved mentions
+        self.assertEqual(len(report["held_for_review"]), 1)
+        self.assertTrue(report["held_for_review"][0]["title"].startswith("Artem Veselov, Triada Robotics: \u201cThe market is moving away"), report["held_for_review"][0]["title"])
+        self.assertEqual(sorted(report["held_for_review"][0]["possible_duplicate_of"]), ["Artem Veselov interview (German edition)", "Artem Veselov interview (September 28)"])
+        held_id = report["held_for_review"][0]["id"]
+        self.assertIn(held_id, [r["id"] for r in self.read("mentions_public.json")])                  # held from the page only; not deleted anywhere
+        self.write_decisions((held_id, "not_duplicate")); self.execute()                              # the owner answers: it is a different article
+        rows2, report2 = build()
+        self.assertEqual((rows2, report2["held_for_review"]), (312, []))
+        self.write_decisions((held_id, "duplicate")); self.execute()                                  # the owner answers the other way
+        rows3, report3 = build()
+        self.assertEqual((rows3, report3["held_for_review"]), (311, []))
+        self.assertNotIn(held_id, [r["id"] for r in self.read("mentions_public.json")])
+
+    # ---- 7. the real data -------------------------------------------------------------------------------------------------------
+
+    def test_the_real_311_curated_mentions_and_14_exclusions_against_the_real_collector_files(self):
+        curated, excl = fixture("curated_311.json"), fixture("exclusions_14.json")
+        confirmed, review = fixture("repo_mentions_2026-10-28.json"), fixture("repo_review_2026-10-28.json")
+        out = self.run_main(confirmed=confirmed, review=review, public=fixture("repo_public_2026-10-28.json"), curated=curated, exclusions=excl)
+        by_id = {r["id"]: r for r in out["public"]}
+        self.assertEqual(len(curated), 311)
+        self.assertTrue(all(by_id.get(c["id"]) == c for c in curated))                              # all 311, exactly as written
+        excluded_ids = {i for e in excl["entries"] for i in e["collector_ids"]}
+        self.assertEqual([r["title"] for r in out["public"] if r["id"] in excluded_ids], [])        # the 9 removed mentions stay out
+        self.assertEqual(out["status"]["protection"]["excluded_hidden"], 9)
+        self.assertEqual({r["id"] for r in review} & excluded_ids, excluded_ids & {r["id"] for r in review})   # ...but remain in their own file
+        self.assertEqual(sorted(r["id"] for r in out["review"]), sorted(r["id"] for r in review))
+        extras = [r["title"] for r in out["public"] if r["id"] not in {c["id"] for c in curated}]
+        self.assertEqual(len(extras), 3, extras)                                                    # the only collector records we do not have
+        self.assertFalse(any("Catch Up to Russia" in t for t in extras))                            # the Bravo copy is recognised as already curated
+        self.assertEqual(out["status"]["protection"]["public_total"], 314)
+        kinds = sorted(f["type"] for f in out["flags"])
+        self.assertEqual(kinds, ["possible_duplicate", "shared_link", "shared_link"])               # two shared-link pairs and one possible duplicate, all for review
 
 
 if __name__ == "__main__":

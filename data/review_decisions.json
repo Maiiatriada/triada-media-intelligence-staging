@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "purpose": "The owner's answers to 'possible duplicate' flags. A record held for review stays off the Mentions Library and the Overview until it appears here. Use tools/review.py, or edit this file in GitHub.",
+  "decisions": []
+}

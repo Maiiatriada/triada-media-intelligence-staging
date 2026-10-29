@@ -7,6 +7,10 @@ on:
     paths:
       - collector.py
       - test_collector.py
+      - tools/**
+      - tests/**
+      - data/**
+      - tracker/**
       - .github/workflows/tests.yml
   workflow_dispatch:
 
@@ -25,3 +29,7 @@ jobs:
         run: |
           python -m py_compile collector.py
           python -m unittest -v test_collector.py
+      - name: Test the tracker build and the workflows
+        run: |
+          python -m pip install pyyaml beautifulsoup4
+          python -m unittest discover -s tests/python -v
