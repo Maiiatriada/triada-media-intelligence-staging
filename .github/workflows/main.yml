@@ -68,3 +68,13 @@ jobs:
           else
             echo "No new mentions to save"
           fi
+
+  # A commit made with the built-in token does not start other workflows, so the site is rebuilt from here, once the
+  # collector has saved. The tracker page and the Library / Overview are generated from the same mentions_public.json.
+  deploy-site:
+    needs: search-mentions
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/dashboard-deploy.yml
