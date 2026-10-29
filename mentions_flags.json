@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "meaning": "Records that need a person's attention. The collector never deletes or merges anything listed here.",
+  "flags": [
+    {
+      "type": "shared_link",
+      "link": "news.google.com/rss/articles/CBMiakFVX3lxTE1GaU1wUUpuTmhjN0piY2tQMU5LSmw4YTNlOHhOckVFMDNVT1ppWWRuWXpraXVIdjZNcmVEajNoSzNFU1EtbFNfeERVUEJxd1NXX3ZxUGVSNDdpNm9DU25qOUJtSE5VR1lkTmc",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "auto-dfa9ce1d0a0cff04",
+          "title": "В Україні випробують реактивний безпілотник Bravo дальністю до 2000 км - Резонанс UA",
+          "source": "Резонанс UA",
+          "platform": "Media",
+          "published_at": "2026-06-23T07:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "auto-dfa9ce1d0a0cff04-dup2",
+          "title": "В Україні випробують реактивний безпілотник Bravo дальністю до 2000 км - resonance.ua",
+          "source": "resonance.ua",
+          "platform": "Media",
+          "published_at": "2026-06-23T07:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        }
+      ]
+    },
+    {
+      "type": "shared_link",
+      "link": "news.google.com/rss/articles/CBMiakFVX3lxTE1fTms2Q0xDcHBfekMzcjJOTVc0ZXNPVFdWZFM1TWg2bW5KNm8yMTNZRVd5SEM0Z2hHSDBHenpWS09ta1pFbGhxRDNHRDVSZTRXVWJxa0pXeXdubzQtTzJ6NmNSMVNwUUdYVEE",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "a4388712469cf36e49938bcb7c4f72551e0aac6f647c46028df61315b39a2ffb",
+          "title": "30 грантів по $50 000 для українських оборонних стартапів: VD Accelerator приймає заявки до кінця тижня - Defender Media",
+          "source": "Defender Media",
+          "platform": "Media",
+          "published_at": "2026-07-08T07:00:00+00:00",
+          "where": "mentions_review.json",
+          "curated": false,
+          "excluded_by": "ex-007"
+        },
+        {
+          "id": "ca67d15e0a8919e04206ac18602fdf75cfdbf4734da047f20127a2034d1eb9c2",
+          "title": "VD Accelerator 2.0: гранти по $50 000 для defence-стартапів - Defender Media",
+          "source": "Defender Media",
+          "platform": "Media",
+          "published_at": "2026-07-08T07:00:00+00:00",
+          "where": "mentions_review.json",
+          "curated": false,
+          "excluded_by": "ex-007"
+        }
+      ]
+    },
+    {
+      "type": "possible_duplicate",
+      "link": "news.google.com/rss/articles/CBMitwFBVV95cUxPNnRRMlBBZ1JhNV9kZlBsMGxBaFVJQUpjTlptaE9MNDl1emYxMXZQZV9QN1lpaXdnTThkT1BxSjdlRGtQdFVSZVNGbGo1dUlBdlRKY242YVZUak1fTG45cDUtSk5HLXNZSFdUVFJBVjVFNHQtUHpqWDZxa0U5bDJkNzYxTFM1Z3RyVE1Dak9uMjd1b1dKWlF2cml6QnB5TXN4Uk90ekkyRHV4MXVEQndiYVpsdzNOaEk",
+      "action": "review by a person: the new record is shown; it may be the same story as the curated record(s) from the same source on the same day",
+      "records": [
+        {
+          "id": "8e5eec0c36038519afaf0b53107a0cc580b71ef974d9d265459ddb58ba570315",
+          "title": "Artem Veselov, Triada Robotics: “The market is moving away from expensive legacy systems” - Militär Aktuell",
+          "source": "Militär Aktuell",
+          "platform": "Media",
+          "published_at": "2026-09-28T07:00:00+00:00",
+          "where": "mentions_public.json",
+          "curated": false,
+          "excluded_by": null
+        },
+        {
+          "id": "hist-11-dalangstreckenangriffssys",
+          "title": "Artem Veselov interview (German edition)",
+          "source": "Militär Aktuell",
+          "platform": "Media",
+          "published_at": "2026-09-28T12:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "hist-10-omexpensivelegacysystems",
+          "title": "Artem Veselov interview (September 28)",
+          "source": "Militär Aktuell",
+          "platform": "Media",
+          "published_at": "2026-09-28T12:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        }
+      ]
+    }
+  ]
+}
