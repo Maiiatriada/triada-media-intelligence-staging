@@ -2429,7 +2429,12 @@ body::after {
     var total = set.length, media = set.filter(function (r) { return r.platform === "Media"; }).length, social = total - media, t = tenths([media, social], total);
     var dated = set.filter(function (r) { return r.day; }).map(function (r) { return r.day; }).sort();
     $(".ov-kpi-value", kpiEls.total).textContent = nf(total); $(".ov-kpi-value", kpiEls.media).textContent = nf(media); $(".ov-kpi-value", kpiEls.social).textContent = nf(social);
-    $(".ov-kpi-note", kpiEls.total).textContent = dated.length ? periodLabel({ start: dated[0], end: dated[dated.length - 1] }) : "No mentions in this period";
+    var note = "No mentions in this period";
+    if (dated.length) {
+      note = dateBounds() ? periodLabel({ start: dated[0], end: dated[dated.length - 1] }) :
+        fmtShort(dated[0], dated[0].slice(0, 4) !== todayLocalIso().slice(0, 4)) + " \u2013 Present \u00B7 " + plural(Math.max(1, daysBetween(dated[0], todayLocalIso()) + 1), "day", "days");
+    }
+    $(".ov-kpi-note", kpiEls.total).textContent = note;
     $(".ov-share", kpiEls.media).textContent = total ? (t[0] / 10).toFixed(1) + "%" : "\u2013";
     $(".ov-share", kpiEls.social).textContent = total ? (t[1] / 10).toFixed(1) + "%" : "\u2013";
   }
@@ -2485,7 +2490,7 @@ body::after {
   function buildSeries(set, b) {
     var dated = set.filter(function (r) { return r.day; }).map(function (r) { return r.day; }).sort(), start, end;
     if (b) { start = b.from; end = b.to || utcTodayIso(); if (dated.length && dated[dated.length - 1] > end) end = dated[dated.length - 1]; if (end < start) end = start; }
-    else { if (!dated.length) return { values: [], labels: [], tips: [] }; start = dated[0]; end = dated[dated.length - 1]; }
+    else { if (!dated.length) return { values: [], labels: [], tips: [] }; start = dated[0]; end = dated[dated.length - 1] > todayLocalIso() ? dated[dated.length - 1] : todayLocalIso(); }
     var values = [], labels = [], tips = [], n, i, p, q;
     if (mode === "daily") {
       n = daysBetween(start, end) + 1;
@@ -2594,6 +2599,15 @@ body::after {
   }
   renderRange();
   update();
+  // Refresh the monitoring period even when this tab stays open overnight.
+  var displayedDay = todayLocalIso();
+  function refreshDay() {
+    var day = todayLocalIso();
+    if (day !== displayedDay) { displayedDay = day; update(); }
+  }
+  setInterval(refreshDay, 60000);
+  window.addEventListener("focus", refreshDay);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) refreshDay(); });
 })();
 </script>
 
