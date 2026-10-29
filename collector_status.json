@@ -1,5 +1,5 @@
 {
-  "last_run_utc": "2026-10-29T08:47:38.922162+00:00",
+  "last_run_utc": "2026-10-29T12:08:23.488474+00:00",
   "confirmed_total": 27,
   "pending_internal": 27,
   "google_news_added": 0,
@@ -16,41 +16,41 @@
     "not_run": "The connector made no requests in this run."
   },
   "run": {
-    "started_utc": "2026-10-29T08:44:33.386649+00:00",
-    "finished_utc": "2026-10-29T08:47:38.922277+00:00",
-    "duration_seconds": 185.5,
-    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/40844306268"
+    "started_utc": "2026-10-29T12:05:10.288756+00:00",
+    "finished_utc": "2026-10-29T12:08:23.488609+00:00",
+    "duration_seconds": 193.2,
+    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/40870371599"
   },
   "connectors": {
     "google_news": {
       "label": "Google News",
       "status": "ok",
-      "last_attempt_utc": "2026-10-29T08:45:39.747301+00:00",
-      "last_success_utc": "2026-10-29T08:45:39.747301+00:00",
+      "last_attempt_utc": "2026-10-29T12:06:15.304157+00:00",
+      "last_success_utc": "2026-10-29T12:06:15.304157+00:00",
       "consecutive_failures": 0,
       "requests": 42,
       "failed_requests": 0,
-      "items_fetched": 125,
+      "items_fetched": 128,
       "new_confirmed": 0,
       "last_error": null
     },
     "bing": {
       "label": "Bing",
       "status": "ok",
-      "last_attempt_utc": "2026-10-29T08:47:14.859274+00:00",
-      "last_success_utc": "2026-10-29T08:47:14.859274+00:00",
+      "last_attempt_utc": "2026-10-29T12:07:44.473375+00:00",
+      "last_success_utc": "2026-10-29T12:07:44.473375+00:00",
       "consecutive_failures": 0,
       "requests": 4,
       "failed_requests": 0,
-      "items_fetched": 37,
+      "items_fetched": 40,
       "new_confirmed": 0,
       "last_error": null
     },
     "gdelt": {
       "label": "GDELT",
       "status": "partial",
-      "last_attempt_utc": "2026-10-29T08:46:59.892025+00:00",
-      "last_success_utc": "2026-10-29T08:46:59.892025+00:00",
+      "last_attempt_utc": "2026-10-29T12:07:32.518705+00:00",
+      "last_success_utc": "2026-10-29T12:07:32.518705+00:00",
       "consecutive_failures": 0,
       "requests": 3,
       "failed_requests": 2,
@@ -61,19 +61,19 @@
     "publisher_rss": {
       "label": "Publisher RSS",
       "status": "partial",
-      "last_attempt_utc": "2026-10-29T08:46:36.745435+00:00",
-      "last_success_utc": "2026-10-29T08:46:36.745435+00:00",
+      "last_attempt_utc": "2026-10-29T12:07:02.773640+00:00",
+      "last_success_utc": "2026-10-29T12:07:02.773640+00:00",
       "consecutive_failures": 0,
       "requests": 8,
       "failed_requests": 3,
-      "items_fetched": 112,
+      "items_fetched": 111,
       "new_confirmed": 0,
       "last_error": "ParseError: not well-formed (invalid token): line 1, column 2583",
       "feeds": [
         {
           "name": "Мілітарний",
           "status": "ok",
-          "items_fetched": 3,
+          "items_fetched": 2,
           "new_confirmed": 0,
           "last_error": null
         },
@@ -147,7 +147,7 @@
     "publisher_unavailable": 0,
     "mention_absent": 0,
     "confirmed": 0,
-    "already_known": 125
+    "already_known": 128
   },
   "protection": {
     "curated_total": 311,
