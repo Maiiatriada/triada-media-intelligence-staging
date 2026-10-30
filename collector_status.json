@@ -1,8 +1,8 @@
 {
-  "last_run_utc": "2026-10-30T06:29:25.222451+00:00",
-  "confirmed_total": 38,
+  "last_run_utc": "2026-10-30T07:52:24.593247+00:00",
+  "confirmed_total": 39,
   "pending_internal": 17,
-  "google_news_added": 1,
+  "google_news_added": 2,
   "publisher_feeds_added": 1,
   "gdelt_added": 0,
   "bing_and_alerts_added": 0,
@@ -16,29 +16,29 @@
     "not_run": "The connector made no requests in this run."
   },
   "run": {
-    "started_utc": "2026-10-30T06:24:27.878086+00:00",
-    "finished_utc": "2026-10-30T06:29:25.222593+00:00",
-    "duration_seconds": 297.3,
-    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/41013878876"
+    "started_utc": "2026-10-30T07:47:38.924682+00:00",
+    "finished_utc": "2026-10-30T07:52:24.593424+00:00",
+    "duration_seconds": 285.7,
+    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/41022250608"
   },
   "connectors": {
     "google_news": {
       "label": "Google News",
       "status": "ok",
-      "last_attempt_utc": "2026-10-30T06:25:31.958800+00:00",
-      "last_success_utc": "2026-10-30T06:25:31.958800+00:00",
+      "last_attempt_utc": "2026-10-30T07:48:40.234777+00:00",
+      "last_success_utc": "2026-10-30T07:48:40.234777+00:00",
       "consecutive_failures": 0,
       "requests": 42,
       "failed_requests": 0,
       "items_fetched": 133,
-      "new_confirmed": 1,
+      "new_confirmed": 2,
       "last_error": null
     },
     "bing": {
       "label": "Bing",
       "status": "ok",
-      "last_attempt_utc": "2026-10-30T06:28:11.293809+00:00",
-      "last_success_utc": "2026-10-30T06:28:11.293809+00:00",
+      "last_attempt_utc": "2026-10-30T07:51:36.757997+00:00",
+      "last_success_utc": "2026-10-30T07:51:36.757997+00:00",
       "consecutive_failures": 0,
       "requests": 4,
       "failed_requests": 0,
@@ -48,12 +48,12 @@
     },
     "gdelt": {
       "label": "GDELT",
-      "status": "partial",
-      "last_attempt_utc": "2026-10-30T06:27:34.392015+00:00",
+      "status": "error",
+      "last_attempt_utc": "2026-10-30T07:51:00.267036+00:00",
       "last_success_utc": "2026-10-30T06:27:34.392015+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "requests": 3,
-      "failed_requests": 2,
+      "failed_requests": 3,
       "items_fetched": 0,
       "new_confirmed": 0,
       "last_error": "HTTPError: HTTP Error 429: Too Many Requests"
@@ -61,12 +61,12 @@
     "publisher_rss": {
       "label": "Publisher RSS",
       "status": "ok",
-      "last_attempt_utc": "2026-10-30T06:26:10.933446+00:00",
-      "last_success_utc": "2026-10-30T06:26:10.933446+00:00",
+      "last_attempt_utc": "2026-10-30T07:49:34.264142+00:00",
+      "last_success_utc": "2026-10-30T07:49:34.264142+00:00",
       "consecutive_failures": 0,
       "requests": 8,
       "failed_requests": 0,
-      "items_fetched": 692,
+      "items_fetched": 696,
       "new_confirmed": 1,
       "last_error": null,
       "feeds": [
@@ -115,7 +115,7 @@
         {
           "name": "РБК-Україна",
           "status": "ok",
-          "items_fetched": 576,
+          "items_fetched": 580,
           "new_confirmed": 0,
           "last_error": null
         },
@@ -142,12 +142,12 @@
     }
   },
   "google_news_verification": {
-    "candidates_checked": 1,
-    "publisher_opened": 1,
+    "candidates_checked": 2,
+    "publisher_opened": 2,
     "publisher_unavailable": 0,
     "mention_absent": 0,
-    "confirmed": 1,
-    "already_known": 132
+    "confirmed": 2,
+    "already_known": 131
   },
   "channel_monitoring": {
     "scope": "public indexed posts only; no private posts or complete social coverage",
@@ -179,16 +179,16 @@
           },
           {
             "query": "\"Тріада Роботікс\" site:facebook.com",
-            "results": 10,
+            "results": 5,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 5,
             "status": "ok"
           },
           {
             "query": "\"Триада Роботикс\" site:facebook.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 1,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -206,7 +206,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 51,
+        "query_scope_violations": 55,
         "status": "partial"
       },
       "Instagram": {
@@ -229,9 +229,9 @@
           },
           {
             "query": "\"TriadaRobotics\" site:instagram.com",
-            "results": 10,
+            "results": 5,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 5,
             "status": "ok"
           },
           {
@@ -243,9 +243,9 @@
           },
           {
             "query": "\"Триада Роботикс\" site:instagram.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -263,7 +263,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 56,
+        "query_scope_violations": 54,
         "status": "partial"
       },
       "X": {
@@ -286,23 +286,23 @@
           },
           {
             "query": "\"TriadaRobotics\" site:x.com",
-            "results": 10,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 7,
             "status": "ok"
           },
           {
             "query": "\"Тріада Роботікс\" site:x.com",
-            "results": 11,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 11,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
             "query": "\"Триада Роботикс\" site:x.com",
-            "results": 10,
+            "results": 5,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 5,
             "status": "ok"
           },
           {
@@ -342,9 +342,9 @@
           },
           {
             "query": "\"Триада Роботикс\" site:twitter.com",
-            "results": 10,
+            "results": 5,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 5,
             "status": "ok"
           },
           {
@@ -362,7 +362,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 121,
+        "query_scope_violations": 107,
         "status": "partial"
       },
       "YouTube": {
@@ -392,23 +392,23 @@
           },
           {
             "query": "\"Тріада Роботікс\" site:youtube.com",
-            "results": 10,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 7,
             "status": "ok"
           },
           {
             "query": "\"Триада Роботикс\" site:youtube.com",
-            "results": 9,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 9,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
             "query": "\"Artem Veselov\" site:youtube.com",
             "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 9,
             "status": "ok"
           },
           {
@@ -419,7 +419,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 59,
+        "query_scope_violations": 56,
         "status": "partial"
       },
       "LinkedIn": {
@@ -499,23 +499,23 @@
           },
           {
             "query": "\"TriadaRobotics\" site:t.me",
+            "results": 7,
+            "matching_post_links": 0,
+            "out_of_scope_results": 7,
+            "status": "ok"
+          },
+          {
+            "query": "\"Тріада Роботікс\" site:t.me",
             "results": 10,
             "matching_post_links": 0,
             "out_of_scope_results": 10,
             "status": "ok"
           },
           {
-            "query": "\"Тріада Роботікс\" site:t.me",
-            "results": 14,
-            "matching_post_links": 0,
-            "out_of_scope_results": 14,
-            "status": "ok"
-          },
-          {
             "query": "\"Триада Роботикс\" site:t.me",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -533,7 +533,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 61,
+        "query_scope_violations": 57,
         "status": "partial"
       }
     },
@@ -546,8 +546,8 @@
       "status": "ok",
       "requests": 6,
       "errors": 0,
-      "confirmed": 2,
-      "already_known": 2
+      "confirmed": 1,
+      "already_known": 3
     },
     "author_page": {
       "status": "ok",
@@ -569,6 +569,6 @@
     "new_finds_duplicate_of_protected": 3,
     "shared_link_flags": 5,
     "possible_duplicate_flags": 1,
-    "public_total": 317
+    "public_total": 318
   }
 }
