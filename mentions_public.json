@@ -45,33 +45,41 @@
     "id": "30b2a2e0ce6458df8959676b24e7f25b0b9481726a7cfab2f16f2dcaaf6495c6",
     "title": "Iran, Saudi Arabia, Turkey, and Pakistan Agree to Further Talks - Мілітарний",
     "source": "Мілітарний",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5XTThTUGN3QURxMnZPZ3ZnRFFtSEJxd19USEpvSHVxVzI1SDk1c0NsdkUxT2MwMjBpcXdvbDFFWkVPNXJTM2J4b0dLQ0xJVG1IYXlwT2FYVFhpcXNkVGdfLXdFT29ZUTU0YVpmTzRENXJBNkZJTzdyTWFfN20?oc=5",
+    "url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/",
     "published_at": "2026-10-26T18:41:19+00:00",
     "keyword": "\"Artem Veselov\"",
     "matched_queries": [
       "\"Artem Veselov\""
     ],
-    "status": "review",
+    "status": "relevant",
     "platform": "Media",
     "categories": [
       "CEO"
-    ]
+    ],
+    "products": [],
+    "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 How Can",
+    "verification_method": "article_body",
+    "direct_url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/"
   },
   {
     "id": "520aab1d83f4721483cfe4c13b96bfab47e2634f98380bb9750f91f22bc21247",
     "title": "Unknown Drones Used in Attack on Russia’s Lipetsk - Мілітарний",
     "source": "Мілітарний",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWjFzUWYyMFhsUFI0X1I4OGkzTS1PRW9Ma2Q0V1FWTk5OSXIyTGdoOUduN3pZNmM5U3BmeU1zczhmVkZtTGJYMnRLbzNtUEZ5aV9qWV95b3Q3eTZiTUR6MU44OGp0ZG44UklzSm9LckZfemYzcWNUYXExMVhCSWdIRktoRmFSZTFV?oc=5",
+    "url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/",
     "published_at": "2026-10-25T15:41:18+00:00",
     "keyword": "\"Artem Veselov\" \"drone\"",
     "matched_queries": [
       "\"Artem Veselov\" \"drone\""
     ],
-    "status": "review",
+    "status": "relevant",
     "platform": "Media",
     "categories": [
       "CEO"
-    ]
+    ],
+    "products": [],
+    "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 All blo",
+    "verification_method": "article_body",
+    "direct_url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/"
   },
   {
     "id": "auto-18e8117cc232f50d",
@@ -4393,6 +4401,29 @@
       "tooltip_source": "Спалахуйка.ua ",
       "tooltip_title": "Схожий? Тільки хвіст трохи інший, але швидкісний, як реактивний. Українська deftech-компанія Triada Robotics працює над Bravo діпстрайк-дроном..."
     }
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=S88chRwl5UA",
+    "title": "FP-1 і «Лютий» чекають на новачків у діпстрайк-тусовці — СвітОгляд+ — 03.08.2026",
+    "source": "СвітОглядPlus",
+    "author_url": "https://www.youtube.com/channel/UCp1U9HV76q4nHNfttDAEWDw",
+    "platform": "YouTube",
+    "published_at": "2026-08-02T22:51:00+00:00",
+    "status": "relevant",
+    "date_source": "youtube_api",
+    "verification_method": "youtube_api_title_description",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "раніше невідомий безпілотник. Попередньо припускають, що це міг бути Bravo від Triada Robotics — турбореактивний діпстрайк із заявленою дальністю до 2000 кілометрів, бойовою частиною 100–200 кілограмів і швидкістю",
+    "id": "002ba6e3f4d27af1c1faf40d979563a6c67e30cf8e54bb37c0dcc17cc77d1ec6",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-10-30T06:29:23.621304+00:00"
   },
   {
     "id": "b24-r48",

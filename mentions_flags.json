@@ -4,6 +4,33 @@
   "flags": [
     {
       "type": "shared_link",
+      "link": "militarnyi.com/en/blogs/eurosatory-2026-is-europe-ready-for-modern-war",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "hist-6-europereadyformodernwar",
+          "title": "Колонка CEO в Militarnyi: враження від Eurosatory 2026",
+          "source": "Militarnyi (авторська колонка)",
+          "platform": "Media",
+          "published_at": "2026-06-26T12:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "d7deed40daef6753b4063b32e0a32dde37ed029b6be56817561bee9858936651",
+          "title": "Eurosatory 2026. Is Europe Ready for Modern War? - Мілітарний",
+          "source": "Мілітарний",
+          "platform": "Media",
+          "published_at": "2026-06-26T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
+        }
+      ]
+    },
+    {
+      "type": "shared_link",
       "link": "news.google.com/rss/articles/CBMiakFVX3lxTE1GaU1wUUpuTmhjN0piY2tQMU5LSmw4YTNlOHhOckVFMDNVT1ppWWRuWXpraXVIdjZNcmVEajNoSzNFU1EtbFNfeERVUEJxd1NXX3ZxUGVSNDdpNm9DU25qOUJtSE5VR1lkTmc",
       "action": "review by a person: both records are kept, nothing was deleted or merged",
       "records": [
@@ -53,6 +80,60 @@
           "where": "mentions_review.json",
           "curated": false,
           "excluded_by": "ex-007"
+        }
+      ]
+    },
+    {
+      "type": "shared_link",
+      "link": "novosti-n.org/ua/news/Tayemnychyj-dron-nad-Ufoyu-eksperty-porivnyaly-jogo-z-F-117-ta-ukrayinskym-Bravo-342919",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "b24-r209",
+          "title": "Таємничий дрон над Уфою: експерти порівняли його з F117 та українським Bravo",
+          "source": "Ірина Ігорева",
+          "platform": "Media",
+          "published_at": "2026-08-04T07:07:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "1f507f2915eb56770f8e2d104023b7200b8c009c06ce4f46d46a8a10d3c924ca",
+          "title": "Таємничий дрон над Уфою: експерти порівняли його з F‑117 та українським Bravo - Новини N",
+          "source": "Новини N",
+          "platform": "Media",
+          "published_at": "2026-08-04T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
+        }
+      ]
+    },
+    {
+      "type": "shared_link",
+      "link": "rbc.ua/rus/news/taemnichiy-dron-shozhiy-amerikanskiy-f-117-1785808582.html",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "hist-35-anskiyf1171785808582html",
+          "title": "Mystery drone resembling F-117: Triada reference",
+          "source": "РБК-Україна",
+          "platform": "Media",
+          "published_at": "2026-08-03T12:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "786c77a3c36ac4c760b62d84d664e02e327d841082bc7b65f44a7091b774beae",
+          "title": "Таємничий дрон, схожий на американський F-117 Nighthawk, атакував НПЗ в Уфі - РБК-Україна",
+          "source": "РБК-Україна",
+          "platform": "Media",
+          "published_at": "2026-08-04T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
         }
       ]
     },

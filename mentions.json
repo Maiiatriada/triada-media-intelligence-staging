@@ -1,5 +1,45 @@
 [
   {
+    "id": "30b2a2e0ce6458df8959676b24e7f25b0b9481726a7cfab2f16f2dcaaf6495c6",
+    "title": "Iran, Saudi Arabia, Turkey, and Pakistan Agree to Further Talks - Мілітарний",
+    "source": "Мілітарний",
+    "url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/",
+    "published_at": "2026-10-26T18:41:19+00:00",
+    "keyword": "\"Artem Veselov\"",
+    "matched_queries": [
+      "\"Artem Veselov\""
+    ],
+    "status": "relevant",
+    "platform": "Media",
+    "categories": [
+      "CEO"
+    ],
+    "products": [],
+    "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 How Can",
+    "verification_method": "article_body",
+    "direct_url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/"
+  },
+  {
+    "id": "520aab1d83f4721483cfe4c13b96bfab47e2634f98380bb9750f91f22bc21247",
+    "title": "Unknown Drones Used in Attack on Russia’s Lipetsk - Мілітарний",
+    "source": "Мілітарний",
+    "url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/",
+    "published_at": "2026-10-25T15:41:18+00:00",
+    "keyword": "\"Artem Veselov\" \"drone\"",
+    "matched_queries": [
+      "\"Artem Veselov\" \"drone\""
+    ],
+    "status": "relevant",
+    "platform": "Media",
+    "categories": [
+      "CEO"
+    ],
+    "products": [],
+    "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 All blo",
+    "verification_method": "article_body",
+    "direct_url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/"
+  },
+  {
     "id": "18e8117cc232f50d5ff6e56ca13d39bb22a8de9a9f7edfa90d2b2a48f9ade804",
     "title": "Cheap Is Not a Strategy - Мілітарний",
     "source": "Мілітарний",
@@ -203,6 +243,133 @@
     "platform": "Media"
   },
   {
+    "id": "78f3f7cf9737f83a6b4e7d388896baefe0c74ba13c7d29de8121faaff4791f4f",
+    "title": "F-117-like mystery drone targets oil refinery in Russia’s Ufa - RBC-Ukraine",
+    "source": "RBC-Ukraine",
+    "url": "https://newsukraine.rbc.ua/news/f-117-like-mystery-drone-targets-oil-refinery-1785814848.html",
+    "published_at": "2026-08-04T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "have been the new Ukrainian jet strike drone Bravo Deep-Strike UAV Platform by  Triada Robotics , but there is no official confirmation of this information. In the published footage, the aircraft has an unusual shap",
+    "verification_method": "article_body",
+    "direct_url": "https://newsukraine.rbc.ua/news/f-117-like-mystery-drone-targets-oil-refinery-1785814848.html"
+  },
+  {
+    "id": "a7a0ec6a63315a503946d7a1cf67592142818916c2d55c9974adc2be647401f9",
+    "title": "Схожий на американський F-117 Nighthawk: під час удару по Уфі помітили загадковий дрон - Главред",
+    "source": "Главред",
+    "url": "https://glavred.net/war/pohozh-na-amerikanskiy-f-117-nighthawk-vo-vremya-udara-po-ufe-zametili-zagadochnyy-dron-10785728.html",
+    "published_at": "2026-08-04T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "вий український реактивний ударний дрон Bravo Deep-Strike UAV Platform компанії Triada Robotics. Офіційного підтвердження цієї інформації немає. \"Вчора (2 серпня) під час удару по території Росії було помічено неіде",
+    "verification_method": "article_body",
+    "direct_url": "https://glavred.net/war/pohozh-na-amerikanskiy-f-117-nighthawk-vo-vremya-udara-po-ufe-zametili-zagadochnyy-dron-10785728.html"
+  },
+  {
+    "id": "786c77a3c36ac4c760b62d84d664e02e327d841082bc7b65f44a7091b774beae",
+    "title": "Таємничий дрон, схожий на американський F-117 Nighthawk, атакував НПЗ в Уфі - РБК-Україна",
+    "source": "РБК-Україна",
+    "url": "https://www.rbc.ua/rus/news/taemnichiy-dron-shozhiy-amerikanskiy-f-117-1785808582.html",
+    "published_at": "2026-08-04T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "ий український реактивний ударний дрон Bravo Deep-Strike UAV Platform компанії  Triada Robotics , однак офіційного підтвердження цієї інформації немає. На оприлюднених кадрах апарат має незвичну для більшості україн",
+    "verification_method": "article_body",
+    "direct_url": "https://www.rbc.ua/rus/news/taemnichiy-dron-shozhiy-amerikanskiy-f-117-1785808582.html"
+  },
+  {
+    "id": "1f507f2915eb56770f8e2d104023b7200b8c009c06ce4f46d46a8a10d3c924ca",
+    "title": "Таємничий дрон над Уфою: експерти порівняли його з F‑117 та українським Bravo - Новини N",
+    "source": "Новини N",
+    "url": "https://novosti-n.org/ua/news/Tayemnychyj-dron-nad-Ufoyu-eksperty-porivnyaly-jogo-z-F-117-ta-ukrayinskym-Bravo-342919",
+    "published_at": "2026-08-04T07:00:00+00:00",
+    "keyword": "\"Triada\" \"BRAVO\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "ий український реактивний ударний  дрон Bravo Deep-Strike UAV Platform компанії Triada Robotics , проте офіційного підтвердження поки що немає. На опублікованих кадрах апарат має незвичайну форму та, ймовірно, оснащ",
+    "verification_method": "article_body",
+    "direct_url": "https://novosti-n.org/ua/news/Tayemnychyj-dron-nad-Ufoyu-eksperty-porivnyaly-jogo-z-F-117-ta-ukrayinskym-Bravo-342919"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=S88chRwl5UA",
+    "title": "FP-1 і «Лютий» чекають на новачків у діпстрайк-тусовці — СвітОгляд+ — 03.08.2026",
+    "source": "СвітОглядPlus",
+    "author_url": "https://www.youtube.com/channel/UCp1U9HV76q4nHNfttDAEWDw",
+    "platform": "YouTube",
+    "published_at": "2026-08-02T22:51:00+00:00",
+    "status": "relevant",
+    "date_source": "youtube_api",
+    "verification_method": "youtube_api_title_description",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "раніше невідомий безпілотник. Попередньо припускають, що це міг бути Bravo від Triada Robotics — турбореактивний діпстрайк із заявленою дальністю до 2000 кілометрів, бойовою частиною 100–200 кілограмів і швидкістю",
+    "id": "002ba6e3f4d27af1c1faf40d979563a6c67e30cf8e54bb37c0dcc17cc77d1ec6",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-10-30T06:29:23.621304+00:00"
+  },
+  {
     "id": "d417d971d2409f3282bb25c2c46669123397b8c38c6495d2f13f764d819e0aa3",
     "title": "What \"Battle-Tested\" Really Means: Ukraine Is Not a Lab. It Is the Exam - Мілітарний",
     "source": "Мілітарний",
@@ -375,6 +542,26 @@
     "platform": "Media"
   },
   {
+    "id": "d7deed40daef6753b4063b32e0a32dde37ed029b6be56817561bee9858936651",
+    "title": "Eurosatory 2026. Is Europe Ready for Modern War? - Мілітарний",
+    "source": "Мілітарний",
+    "url": "https://militarnyi.com/en/blogs/eurosatory-2026-is-europe-ready-for-modern-war/",
+    "published_at": "2026-06-26T07:00:00+00:00",
+    "keyword": "\"Artem Veselov\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"Artem Veselov\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "CEO"
+    ],
+    "products": [],
+    "matched_text": "Europe Ready for Modern War? #Europe #France #NATO \n                            Artem Veselov                           June 26, 2026 11:24 Міжнародна виставка Eurosatory 2026.  Every major defence exhibition is a",
+    "verification_method": "article_body",
+    "direct_url": "https://militarnyi.com/en/blogs/eurosatory-2026-is-europe-ready-for-modern-war/"
+  },
+  {
     "id": "c91749aed825587937b2192aa66f572a1cc9c8d892a11c27f72f6fa23cda701c",
     "title": "В Україні представили діпстрайк-дрон Bravo: летить на 2000 км та має ШІ, що вчиться з кожним польотом - ITC.ua",
     "source": "ITC.ua",
@@ -395,6 +582,33 @@
     ],
     "verification_method": "manual_publisher_review",
     "platform": "Media"
+  },
+  {
+    "id": "195df4ec3edd201900522c40ce99956c63c6143517860babbe298089e1068912",
+    "title": "Polish Striker drone reaches Urals range after successful Ukraine tests - RBC-Ukraine",
+    "source": "RBC-Ukraine",
+    "url": "https://newsukraine.rbc.ua/news/polish-striker-drone-reaches-urals-range-1782362658.html",
+    "published_at": "2026-06-25T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "crews. What other drones are being developed and tested in Ukraine The company Triada Robotics is working on the Bravo drone, capable of cutting through the air at 700 km/h. It can cover distances of up to 2,000 ki",
+    "verification_method": "article_body",
+    "direct_url": "https://newsukraine.rbc.ua/news/polish-striker-drone-reaches-urals-range-1782362658.html"
   },
   {
     "id": "manual-3-20260624",
@@ -435,6 +649,36 @@
     ],
     "verification_method": "manual_publisher_review",
     "platform": "Media"
+  },
+  {
+    "id": "5fa03ff4e95e12f6ea8217ce2e24e48f4fb55b4af8f70d55ef42b4401093eb11",
+    "title": "ШИ на борту и дальность 2000 км: Украина тестирует новый БпЛА - РБК-Україна",
+    "source": "РБК-Україна",
+    "url": "https://www.rbc.ua/ukr/news/shi-bortu-i-dalnist-2000-km-ukrayina-testue-1782284412.html",
+    "published_at": "2026-06-24T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"KILO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\"",
+      "\"Triada\" \"KILO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "мин Ольга Завада Аналог Anduril - Украина разрабатывает новый дипстрайк (фото: Triada Robotics) Додати як бажане джерело в Google В Украине разрабатывается новый дальнобойный беспилотник Bravo. Созданием технологии",
+    "verification_method": "article_body",
+    "direct_url": "https://www.rbc.ua/ukr/news/shi-bortu-i-dalnist-2000-km-ukrayina-testue-1782284412.html"
   },
   {
     "id": "97f5088da6394688367c934425e83f821dbbe5d11893a09dae163f15f235cdc7",
@@ -585,6 +829,35 @@
     ],
     "verification_method": "manual_publisher_review",
     "platform": "Media"
+  },
+  {
+    "id": "68e54bc41641a03ccd5edf7c0fa4d070963d8249bf149e03a741d37ff1af4ab6",
+    "title": "В Україні готують до випробувань новий реактивний безпілотник, здатний долати до 2000 км - Ukr.net",
+    "source": "Ukr.net",
+    "url": "https://www.ukr.net/news/details/technologies/118133314.html",
+    "published_at": "2026-06-23T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"KILO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "ик, здатний долати до 2000 км \r\n        23 чер • internetua Українська компанія Triada Robotics розробила новий далекобійний безпілотник Bravo, який може долати до 2000 кілометрів. Апарат вже готують до перших випро",
+    "verification_method": "article_body",
+    "direct_url": "https://www.ukr.net/news/details/technologies/118133314.html"
   },
   {
     "id": "manual-2-20260610",
