@@ -2743,6 +2743,44 @@
     }
   },
   {
+    "id": "2568103afc4818f1c73d42bd27aec62e9df970717ef17bf1a2ff1a79a451aca6",
+    "url": "https://x.com/S8gy2AEgVRHyS2Q/status/2084686394489024652",
+    "source": "миллиард казахстанцев",
+    "author_url": "https://x.com/S8gy2AEgVRHyS2Q",
+    "title": "Triada Robotics Bravo: згадка дрона та Артема Веселова",
+    "platform": "X",
+    "published_at": "2026-08-04",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovery_method": "authorized_browser_search",
+    "discovered_at": "2026-10-30",
+    "verification_method": "native_browser_post",
+    "evidence": {
+      "post_url": "https://x.com/S8gy2AEgVRHyS2Q/status/2084686394489024652",
+      "author_url": "https://x.com/S8gy2AEgVRHyS2Q",
+      "publication_date": "2026-08-04",
+      "text_complete": true,
+      "original_language": true,
+      "public_post": true,
+      "observed_at": "2026-10-30",
+      "date_precision": "day",
+      "capture_method": "native_post_detail",
+      "capture_note": "Full original text and author/date opened in authorized browser; no time or timezone inferred"
+    },
+    "post_text": "🤔 Похоже? Только хвост немного другой, но такой же скоростной, как реактивный.\n\nУкраинская оборонная технологическая компания Triada Robotics работает над дроном Bravo – ударным беспилотником с турбореактивным двигателем, способным нести боеголовку весом 100-200 кг и имеющим максимальную дальность 2000 км. К концу года команда планирует перейти к предсерийному производству, говорит сооснователь проекта Артем Веселов.",
+    "status": "relevant",
+    "categories": [
+      "Company",
+      "CEO",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "й же скоростной, как реактивный.\n\nУкраинская оборонная технологическая компания Triada Robotics работает над дроном Bravo – ударным беспилотником с турбореактивным двигателем, способным нести боеголовку весом 100-20",
+    "date_source": "native_browser_publication"
+  },
+  {
     "id": "b24-r136",
     "title": "Новый украинский реактивный БПЛА Bravo уже проходит боевые испытания по прямому назначению на территории РФ. В сети появились кадры пролета...",
     "source": "Питер против войны: чат",
