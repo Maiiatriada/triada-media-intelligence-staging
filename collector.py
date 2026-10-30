@@ -23,6 +23,7 @@ from html.parser import HTMLParser
 from tools.tmi_keys import DuplicateIndex, canonical_url, matching_exclusion, title_key
 from tools.tmi_keys import is_excluded as tmi_is_excluded
 from tools import monitoring
+from tools import browser_monitoring
 
 DATABASE = Path("mentions.json")
 REVIEW = Path("mentions_review.json")
@@ -1564,6 +1565,7 @@ def _run():
     print(f"Verified from Bing and Alerts: {web_added}", flush=True)
 
     channel_report = monitoring.collect(confirmed, pending, classify, fetch_bing_rss)
+    channel_report["browser_import"] = browser_monitoring.collect(confirmed, pending, classify, known_records=curated)
     monitoring.enforce_scope(confirmed, pending, is_protected)
 
     for title in restore_manual(confirmed, pending, manual_snapshot):
