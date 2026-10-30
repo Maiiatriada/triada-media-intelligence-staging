@@ -10,6 +10,7 @@ on:
       - 'data/exclusions.json'
       - 'data/mentions_curated.json'
       - 'data/review_decisions.json'
+      - 'data/monitoring.json'
       - 'tools/**'
       - '.github/workflows/main.yml'
   schedule:
@@ -40,7 +41,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install Google News publisher URL decoder
-        run: python -m pip install googlenewsdecoder pyyaml beautifulsoup4
+        run: python -m pip install googlenewsdecoder==0.1.7 selectolax==0.4.13 pyyaml beautifulsoup4
+      - name: Verify Google News decoder dependency
+        run: python -c "from googlenewsdecoder import gnewsdecoder"
 
       - name: Test collector and tracker tools
         run: |
@@ -50,6 +53,7 @@ jobs:
       - name: Run media monitoring
         env:
           GOOGLE_ALERTS_RSS: ${{ secrets.GOOGLE_ALERTS_RSS }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           # The run stops, and saves nothing, if the curated mentions or the exclusion list are missing or invalid.
           TRIADA_REQUIRE_CURATED: "1"
         run: python collector.py
