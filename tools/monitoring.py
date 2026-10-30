@@ -184,7 +184,7 @@ def enforce_scope(confirmed, pending, protected):
             if owned(record.get("url", ""), cfg) or owned(record.get("author_url", ""), cfg):
                 del bucket[key]; continue
             name = platform(record.get("url", ""))
-            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description"):
+            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description", "native_browser_post"):
                 record.update(platform=name, origin="collector", status="review", review_reason="native_content_author_and_publication_date_required")
                 if bucket is confirmed:
                     del confirmed[key]; pending[key] = record

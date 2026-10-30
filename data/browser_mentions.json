@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://x.com/S8gy2AEgVRHyS2Q/status/2084686394489024652",
+    "source": "миллиард казахстанцев",
+    "author_url": "https://x.com/S8gy2AEgVRHyS2Q",
+    "published_at": "2026-08-04",
+    "title": "Triada Robotics Bravo: згадка дрона та Артема Веселова",
+    "post_text": "🤔 Похоже? Только хвост немного другой, но такой же скоростной, как реактивный.\n\nУкраинская оборонная технологическая компания Triada Robotics работает над дроном Bravo – ударным беспилотником с турбореактивным двигателем, способным нести боеголовку весом 100-200 кг и имеющим максимальную дальность 2000 км. К концу года команда планирует перейти к предсерийному производству, говорит сооснователь проекта Артем Веселов.",
+    "verification_method": "native_browser_post",
+    "discovered_at": "2026-10-30",
+    "evidence": {
+      "post_url": "https://x.com/S8gy2AEgVRHyS2Q/status/2084686394489024652",
+      "author_url": "https://x.com/S8gy2AEgVRHyS2Q",
+      "publication_date": "2026-08-04",
+      "text_complete": true,
+      "original_language": true,
+      "public_post": true,
+      "observed_at": "2026-10-30",
+      "date_precision": "day",
+      "capture_method": "native_post_detail",
+      "capture_note": "Full original text and author/date opened in authorized browser; no time or timezone inferred"
+    }
+  }
+]

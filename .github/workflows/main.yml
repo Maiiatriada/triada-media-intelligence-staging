@@ -11,6 +11,7 @@ on:
       - 'data/mentions_curated.json'
       - 'data/review_decisions.json'
       - 'data/monitoring.json'
+      - 'data/browser_mentions.json'
       - 'tools/**'
       - '.github/workflows/main.yml'
   schedule:
