@@ -3,13 +3,39 @@
   "start_date": "2026-04-23",
   "author_start_date": "2026-10-29",
   "schedule_utc": "07:00 daily",
-  "queries": ["\"Triada Robotics\"", "\"TriadaRobotics\"", "\"Тріада Роботікс\"", "\"Триада Роботикс\"", "\"Artem Veselov\"", "\"Артем Веселов\""],
-  "social_domains": ["facebook.com", "instagram.com", "x.com", "twitter.com", "youtube.com", "linkedin.com", "t.me"],
-  "owned_domains": ["triada-robotics.com"],
-  "owned_profiles": ["https://www.linkedin.com/company/triada-robotics", "https://x.com/TriadaRobotics", "https://www.facebook.com/profile.php?id=61594069029868"],
+  "queries": [
+    "\"Triada Robotics\"",
+    "\"TriadaRobotics\"",
+    "\"Тріада Роботікс\"",
+    "\"Триада Роботикс\"",
+    "\"Artem Veselov\"",
+    "\"Артем Веселов\""
+  ],
+  "social_domains": [
+    "facebook.com",
+    "instagram.com",
+    "x.com",
+    "twitter.com",
+    "youtube.com",
+    "linkedin.com",
+    "t.me"
+  ],
+  "owned_domains": [
+    "triada-robotics.com"
+  ],
+  "owned_profiles": [
+    "https://www.linkedin.com/company/triada-robotics",
+    "https://x.com/TriadaRobotics",
+    "https://www.facebook.com/profile.php?id=61594069029868",
+    "https://www.instagram.com/triadarobotics/"
+  ],
   "author_feed": "https://militarnyi.com/en/author/artem_veselov/feed/",
   "author_page": "https://militarnyi.com/en/author/artem_veselov/",
-  "author_names": ["Artem Veselov", "Artem Veselow", "Артем Веселов"],
+  "author_names": [
+    "Artem Veselov",
+    "Artem Veselow",
+    "Артем Веселов"
+  ],
   "max_candidates_per_platform": 25,
   "youtube_max_pages_per_query": 2
 }
