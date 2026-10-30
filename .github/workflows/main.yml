@@ -41,7 +41,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install Google News publisher URL decoder
-        run: python -m pip install googlenewsdecoder pyyaml beautifulsoup4
+        run: python -m pip install googlenewsdecoder==0.1.7 selectolax==0.4.13 pyyaml beautifulsoup4
+      - name: Verify Google News decoder dependency
+        run: python -c "from googlenewsdecoder import gnewsdecoder"
 
       - name: Test collector and tracker tools
         run: |

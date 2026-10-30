@@ -1052,6 +1052,13 @@ def read_article(url):
 
 
 def extract_article(page):
+    # Cross-promotion links are not mentions in the article itself.
+    def without_related(match):
+        label = html.unescape(re.sub(r"<[^>]+>", " ", match.group(0)))
+        label = " ".join(label.split())
+        return "" if re.match(r"^(?:Читайте також|Також читайте|Читати також|Read also|Also read|Read more|See also)\s*[:—–-]", label, re.I) else match.group(0)
+    for tag in ("a", "p"):
+        page = re.sub(r"<" + tag + r"\b[^>]*>.*?</" + tag + r">", without_related, page, flags=re.I | re.S)
     parser = TextExtractor()
     parser.feed(page)
     return html.unescape(parser.text())

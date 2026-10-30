@@ -106,6 +106,11 @@ class MonitoringTests(unittest.TestCase):
         self.assertTrue(m.PUBLICATION_DATES[URL].startswith("2026-10-28"))
         m.PUBLICATION_DATES.clear()
 
+    def test_related_link_is_not_an_article_mention(self):
+        body = '<p>News about a different company.</p><div><a href="/triada"><strong>Читайте також:</strong> Triada Robotics BRAVO</a></div>'
+        self.assertIsNone(collector.classify(collector.extract_article(body)))
+        self.assertIsNotNone(collector.classify(collector.extract_article('<p>Triada Robotics makes BRAVO.</p>' + body)))
+
     def test_api_error_does_not_leak_key(self):
         exc = ValueError("https://api.test?key=secret")
         self.assertEqual(m.error_name(exc), "ValueError")
