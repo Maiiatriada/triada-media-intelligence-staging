@@ -115,6 +115,11 @@ class MonitoringTests(unittest.TestCase):
         exc = ValueError("https://api.test?key=secret")
         self.assertEqual(m.error_name(exc), "ValueError")
 
+    def test_publisher_sidebar_is_not_article_evidence(self):
+        page = '<div class="news-content-copy"><div class="w-richtext"><p>Unrelated news.</p></div></div><div class="collection-blog">Artem Veselov</div>'
+        self.assertIsNone(collector.classify(collector.extract_article(page)))
+        self.assertIsNotNone(collector.classify(collector.extract_article(page.replace('Unrelated news.', 'Triada Robotics makes BRAVO.'))))
+
     def test_youtube_api_full_description_and_repeat(self):
         c, p = {}, {}
         def fetch(url):

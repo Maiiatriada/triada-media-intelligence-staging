@@ -27,9 +27,9 @@ jobs:
           python-version: '3.11'
       - name: Compile and test collector
         run: |
+          python -m pip install pyyaml beautifulsoup4
           python -m py_compile collector.py
           python -m unittest -v test_collector.py
       - name: Test the tracker build and the workflows
         run: |
-          python -m pip install pyyaml beautifulsoup4
           python -m unittest discover -s tests/python -v

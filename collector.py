@@ -1052,6 +1052,13 @@ def read_article(url):
 
 
 def extract_article(page):
+    # Militarnyi uses rich-text containers rather than an <article> element.
+    # Its surrounding blog cards contain other authors' names and are not evidence.
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(page, "html.parser")
+    body = soup.select_one(".news-content-copy .w-richtext")
+    if body is not None:
+        page = str(body)
     # Cross-promotion links are not mentions in the article itself.
     def without_related(match):
         label = html.unescape(re.sub(r"<[^>]+>", " ", match.group(0)))

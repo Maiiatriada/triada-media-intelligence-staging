@@ -51,15 +51,16 @@
     "matched_queries": [
       "\"Artem Veselov\""
     ],
-    "status": "relevant",
+    "status": "review",
     "platform": "Media",
     "categories": [
       "CEO"
     ],
     "products": [],
     "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 How Can",
-    "verification_method": "article_body",
-    "direct_url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/"
+    "verification_method": "sidebar_match_rejected",
+    "direct_url": "https://militarnyi.com/en/blogs/iran-saudi-arabia-turkey-pakistan-talks/",
+    "review_reason": "publisher_sidebar_only"
   },
   {
     "id": "eebeb85e5fbb2ce6b571ab6b605e2f1d0828ad46b7e623f9bc95ca905312d41a",
@@ -77,9 +78,10 @@
     ],
     "products": [],
     "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 How Can",
-    "status": "relevant",
-    "verification_method": "article_body",
-    "platform": "Media"
+    "status": "review",
+    "verification_method": "sidebar_match_rejected",
+    "platform": "Media",
+    "review_reason": "publisher_sidebar_only"
   },
   {
     "id": "520aab1d83f4721483cfe4c13b96bfab47e2634f98380bb9750f91f22bc21247",
@@ -91,15 +93,16 @@
     "matched_queries": [
       "\"Artem Veselov\" \"drone\""
     ],
-    "status": "relevant",
+    "status": "review",
     "platform": "Media",
     "categories": [
       "CEO"
     ],
     "products": [],
     "matched_text": "llistic Missile Production Urich October 23, 2026 19:46 Cheap Is Not a Strategy Artem Veselov October 21, 2026 19:38 Starlink Goes Passwordless: How Passkeys Work Volodymyr Stepanets October 21, 2026 19:19 All blo",
-    "verification_method": "article_body",
-    "direct_url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/"
+    "verification_method": "sidebar_match_rejected",
+    "direct_url": "https://militarnyi.com/en/news/unknown-drones-used-in-attack-on-russia-s-lipetsk/",
+    "review_reason": "publisher_sidebar_only"
   },
   {
     "id": "auto-18e8117cc232f50d",
