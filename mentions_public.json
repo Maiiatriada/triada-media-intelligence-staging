@@ -8824,5 +8824,119 @@
       "company": true,
       "ceo": true
     }
+  },
+  {
+    "url": "https://x.com/AndyKerbrat/status/2105574047144718741",
+    "platform": "X",
+    "title": "Andy Kerbrat on X: \"Ce matin au lycée Nelson Mandela à ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "11e5d3933e2ea00079b567e94857c3c843fba71b2e50eb70a05282e8ffdb04f8",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:50.258525+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://x.com/NourHammoury/status/2089308708144840732",
+    "platform": "X",
+    "title": "Nour Eldeen Al-Hammoury on X: \"*TRUMP SAYS THERE IS ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "6cbe130d15d06e7121ef1b5adbe8c16410d6054f546f59db3b8327f99decd020",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:52.616373+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://x.com/KatieDaviscourt/status/2102065935515582617",
+    "platform": "X",
+    "title": "Katie Daviscourt on X: \"BREAKING: I investigated SOMALI ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "3b386ab603dec4ea6e780fdc92b3bd6b940aff67f4e5c7e54d9a0ac0fa6fdb66",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:53.155454+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://x.com/NameisAditya_/status/1878395547603870037",
+    "platform": "X",
+    "title": "Aditya on X: \"Another day another 100 for Karun Nair he is in ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "a0a222918ab26c4e49e953d335793353977cbe98a9e60e4c056e01b6b976b3e6",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:53.439435+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://x.com/FirstSquawk/status/2102384195779883166",
+    "platform": "X",
+    "title": "First Squawk on X: \"TRUMP OPEN TO MEETING IRAN OFFICIALS ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "5d4c2a28401b047b00e7e9b885d4323c540fcff29cc32b8c9b51c413081cbe94",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:53.793541+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://x.com/discussingfilm/status/2102414136525148224",
+    "platform": "X",
+    "title": "DiscussingFilm on X: \"First trailer for ‘CLOWN PANIC’, a ...",
+    "source": "X",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "55419ede7d534d815b652174f225dbb50e3f8512ac933ab50fa8e85fd3b350b3",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-01T07:50:55.908170+00:00",
+    "categories": []
   }
 ]
