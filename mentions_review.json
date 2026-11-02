@@ -420,5 +420,23 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-01T07:50:55.908170+00:00"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=6BmPZifNZos",
+    "platform": "YouTube",
+    "title": "Drums Lesson 1 - Absolute Beginner? Start Here! [Free 10 Day Starter ...",
+    "source": "YouTube",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Тріада Роботікс\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "4f429beb86903ab5051164f05d29fcb64ecd5e2415e1e2b0d61b728560f4e3d3",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-02T08:21:09.281475+00:00"
   }
 ]
