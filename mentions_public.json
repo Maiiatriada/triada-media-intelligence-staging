@@ -7927,6 +7927,52 @@
     }
   },
   {
+    "url": "https://www.reddit.com/r/ukraine/comments/1uefvqm/the_ukrainian_missile_industry_russia_has_decided/",
+    "title": "The Ukrainian missile industry Russia has decided to bomb: a structural overview of who makes what, and who pays for it",
+    "source": "/u/ResilientSpiritUA",
+    "author_url": "https://www.reddit.com/user/ResilientSpiritUA",
+    "platform": "Reddit",
+    "published_at": "2026-06-24T14:58:43+00:00",
+    "post_text": "The Ukrainian missile industry Russia has decided to bomb: a structural overview of who makes what, and who pays for it\nOn 2 June DIU told Zelensky that Russia's summer air-campaign priorities had moved Ukrainian missile manufacturers above civilian energy infrastructure. Sixteen days later Ukraine ran the largest aerial assault on Moscow of the war, hitting the Gazprom Neft refinery at Kapotnya with Liutyi drones, FP-1s, and the newer Bars turbofan. The companies behind this aren't a single Ukrainian state monolith. They split into two industries running in parallel. The state-owned side. Luch Design Bureau in Kyiv (Korostelyov has run it since 2003) makes the Neptune cruise missile that took out the Moskva — they're now co-developing Neptune-2 with MBDA. Pivdenmash in Dnipro runs the Hrim-2/Sapsan ballistic programme, which has been targeted by Russian strikes so often the Rada extended its special operating rules through 2027 just to keep it solvent. Antonov has converted its heavy-aviation pedigree into mass production of the AN-196 Liutyi, the workhorse of the long-range campaign. The private side, post-2022. Fire Point (Shtilerman / Terekh, 500+ employees, Pompeo on the advisory board) makes the Flamingo cruise missile and the Freya interceptor with Diehl-supplied seekers. Triada Robotics builds turbofan jet drones (Bravo, Kilo) and is in joint-venture talks with Lockheed Martin and Northrop Grumman. PARS is the volunteer-engineering collective making the Trembita pulsejet for $4-15k a unit through distributed civilian-workshop assembly. And Brave1 Marketplace now lists 800+ certified products with 500,000+ uncrewed assets procured by 400+ combat units through the e-Points system. The funding gap is what's interesting. Total Ukrainian industrial capacity is around $55bn, of which $35bn is long/medium-range strike. The state procurement budget is $10bn. The $45bn delta gets filled by foreign money — €1.3bn from the Danish Model this cycle (€830M of that from frozen Russian assets), €400M+ a year from Germany, the £752M UK order at the 18 June UDCG. I'd flag the constraints honestly because the piece does and you should know them. Brave1 SMEs face multi-year AQAP certification timelines. The Pavlohrad Chemical Plant (solid-fuel rocket motors) sits within Russian cruise-missile range. Fire Point's Flamingo had 5 of 6 missiles intercepted at Kotluban in February, so the 3,000km / 1,150kg specs are manufacturer-reported rather than field-validated yet. AI-25TL refurb engine stockpile is finite. Full piece: https://www.defenceukraine.com/en/insights/ukraine-missile-industry-2026/",
+    "status": "relevant",
+    "date_source": "reddit_public_feed",
+    "verification_method": "reddit_public_feed",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "Flamingo cruise missile and the Freya interceptor with Diehl-supplied seekers. Triada Robotics builds turbofan jet drones (Bravo, Kilo) and is in joint-venture talks with Lockheed Martin and Northrop Grumman. PARS",
+    "id": "73094b63b7eeed2cdcad9197ecb01ae69232538cf7a5e405ada8ada1fc7cb74b",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-04T12:39:57.433465+00:00"
+  },
+  {
+    "url": "https://www.reddit.com/r/CredibleDefense/comments/1uefu33/the_ukrainian_missile_industry_that_russia_is_now/",
+    "title": "The Ukrainian missile industry that Russia is now trying to dismantle: what it actually looks like in mid-2026",
+    "source": "/u/ResilientSpiritUA",
+    "author_url": "https://www.reddit.com/user/ResilientSpiritUA",
+    "platform": "Reddit",
+    "published_at": "2026-06-24T14:56:57+00:00",
+    "post_text": "The Ukrainian missile industry that Russia is now trying to dismantle: what it actually looks like in mid-2026\nRussia's air-campaign target list shifted at the start of June. The DIU briefed Zelensky on 2 June that Russian planners had moved the Ukrainian missile-production base above civilian energy infrastructure in summer priority. Sixteen days later Ukraine ran what's been called the largest aerial assault on Moscow since the war began, hitting the Gazprom Neft refinery at Kapotnya with FP-1s, Liutyi drones, and the newer Bars turbofan in a mixed package. The Russian retargeting and the Moscow strike happened within the same two-week window, and they're related: Russia wouldn't be reallocating Iskander production to chase dispersed Ukrainian assembly sites if it didn't think those sites were producing something consequential. What's behind the strikes is two industries running in parallel. The state-owned side is the surviving Soviet stack: Luch Design Bureau still runs the Neptune family (now with an MBDA co-development for Neptune-2), Pivdenmash holds the Hrim-2/Sapsan ballistic capability and has eaten repeated Russian strikes since 2024 (the Rada extended its special operating rules through 2027 just to keep it solvent), and Antonov has converted its heavy-aviation pedigree into mass production of the AN-196 Liutyi. The private side emerged after 2022. Fire Point is the most visible: 500+ employees, the FP-5 Flamingo cruise missile, the FP-7 Freya interceptor with Diehl-supplied seekers. Triada Robotics is a smaller turbofan-drone shop. PARS is the volunteer-engineering collective that makes the Trembita pulsejet for $4-15k a copy through distributed civilian-workshop assembly. The platform record is mixed and worth being specific about. Liutyi works at scale — Saratov, Caspian Lukoil, Ukhta 1,700 km out, Cheboksary, and now Moscow — at roughly $200k per unit. Long Neptune (Tuapse March 2025, Novorossiysk halted, the April-May Tuapse campaign that produced the environmental disaster) costs about $1.5M. The Flamingo is the question mark. Fire Point claims 3,000 km and a 1,150 kg warhead with a roadmap to seven a day by year-end, but five of six were intercepted by Russian air defences at Kotluban in February, so I'd be cautious about the production-rate claims until the accuracy issue gets resolved. The Bars turbofan was the surprise in the Moscow strike. The funding shape matters because it explains why this scales. Ukraine's Council of Arms Manufacturers puts total domestic industrial capacity at around $55bn, of which roughly $35bn is long- and medium-range strike. The Ukrainian state procurement budget is about $10bn. The gap gets filled by Allied money, and at this point it's not subtle: the Danish Model has scaled from €590M in 2024 to €1.3B projected for the 2025-26 cycle (€830M of that is routed from frozen Russian asset windfall profits), Germany puts €400M+ a year into producing Bars / Liutyi / Flamingo on Ukrainian soil (avoiding the Taurus politics), and the UK announced £752M at the 18 June UDCG specifically for 150,000 Ukrainian-made drones. Worth flagging the constraints. Brave1 SMEs still take years to clear AQAP certification, which is a serious bottleneck if you want to feed the European procurement pipeline. The Pavlohrad Chemical Plant (solid-fuel rocket motors for Sapsan and FP-7) is within Russian cruise-missile range and has been hit. Fire Point's Flamingo engine supply is finite refurbished AI-25TLs from Soviet stockpiles. And Russia is currently trying to break this industry by force. Full piece if you want the manufacturer-by-manufacturer breakdown and the financing detail: https://www.defenceukraine.com/en/insights/ukraine-missile-industry-2026/",
+    "status": "relevant",
+    "date_source": "reddit_public_feed",
+    "verification_method": "reddit_public_feed",
+    "categories": [
+      "Company"
+    ],
+    "products": [],
+    "matched_text": "lamingo cruise missile, the FP-7 Freya interceptor with Diehl-supplied seekers. Triada Robotics is a smaller turbofan-drone shop. PARS is the volunteer-engineering collective that makes the Trembita pulsejet for $4-",
+    "id": "7765de0855760267d3d82c081811beb2649128612d2d7ed5ac57fd4dbe5591ef",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-04T12:39:57.433525+00:00"
+  },
+  {
     "id": "hist-46-ukrayinatestuienoviybpla",
     "title": "Bravo drone report repost",
     "source": "Рада Львів",
@@ -8855,10 +8901,10 @@
       "\"Veselov\" \"Triada Robotics\""
     ],
     "status": "review",
+    "platform": "Media",
     "categories": [
       "CEO"
-    ],
-    "platform": "Media"
+    ]
   },
   {
     "url": "https://x.com/AndyKerbrat/status/2105574047144718741",

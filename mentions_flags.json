@@ -138,6 +138,43 @@
       ]
     },
     {
+      "type": "shared_link",
+      "link": "resonance.ua/v-ukraini-viprobuyut-reaktivniy-bezp",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "b24-r178",
+          "title": "В Україні випробують реактивний безпілотник Bravo дальністю до 2000 км",
+          "source": "Гончаренко Катерина",
+          "platform": "Media",
+          "published_at": "2026-06-23T20:51:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "dfa9ce1d0a0cff04921d8469df484a63c1011abc4599931333a19f3dc4744ecd",
+          "title": "В Україні випробують реактивний безпілотник Bravo дальністю до 2000 км - Резонанс UA",
+          "source": "Резонанс UA",
+          "platform": "Media",
+          "published_at": "2026-06-23T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
+        },
+        {
+          "id": "7896dad866b54e478b2095e1df3d2037d12c4c99f068c7bcbed342dd6b2a54d1",
+          "title": "В Україні випробують реактивний безпілотник Bravo дальністю до 2000 км - resonance.ua",
+          "source": "resonance.ua",
+          "platform": "Media",
+          "published_at": "2026-06-23T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
+        }
+      ]
+    },
+    {
       "type": "possible_duplicate",
       "link": "news.google.com/rss/articles/CBMitwFBVV95cUxPNnRRMlBBZ1JhNV9kZlBsMGxBaFVJQUpjTlptaE9MNDl1emYxMXZQZV9QN1lpaXdnTThkT1BxSjdlRGtQdFVSZVNGbGo1dUlBdlRKY242YVZUak1fTG45cDUtSk5HLXNZSFdUVFJBVjVFNHQtUHpqWDZxa0U5bDJkNzYxTFM1Z3RyVE1Dak9uMjd1b1dKWlF2cml6QnB5TXN4Uk90ekkyRHV4MXVEQndiYVpsdzNOaEk",
       "action": "review by a person: the new record is shown; it may be the same story as the curated record(s) from the same source on the same day",
