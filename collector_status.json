@@ -1,12 +1,12 @@
 {
-  "last_run_utc": "2026-11-04T08:17:35.499038+00:00",
+  "last_run_utc": "2026-11-04T12:24:54.382026+00:00",
   "confirmed_total": 37,
-  "pending_internal": 28,
-  "google_news_added": 0,
+  "pending_internal": 29,
+  "google_news_added": 2,
   "publisher_feeds_added": 1,
   "gdelt_added": 0,
   "bing_and_alerts_added": 0,
-  "google_news_query_errors": 42,
+  "google_news_query_errors": 0,
   "schema_version": 2,
   "status_legend": {
     "ok": "Every request completed without a technical error. This does not guarantee complete monitoring coverage.",
@@ -16,44 +16,44 @@
     "not_run": "The connector made no requests in this run."
   },
   "run": {
-    "started_utc": "2026-11-04T08:08:27.643951+00:00",
-    "finished_utc": "2026-11-04T08:17:35.499152+00:00",
-    "duration_seconds": 547.9,
-    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/41797201190"
+    "started_utc": "2026-11-04T12:19:28.894139+00:00",
+    "finished_utc": "2026-11-04T12:24:54.382237+00:00",
+    "duration_seconds": 325.5,
+    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/41828242085"
   },
   "connectors": {
     "google_news": {
       "label": "Google News",
-      "status": "error",
-      "last_attempt_utc": "2026-11-04T08:14:35.624075+00:00",
-      "last_success_utc": "2026-11-03T08:01:02.728921+00:00",
-      "consecutive_failures": 1,
+      "status": "ok",
+      "last_attempt_utc": "2026-11-04T12:20:33.947288+00:00",
+      "last_success_utc": "2026-11-04T12:20:33.947288+00:00",
+      "consecutive_failures": 0,
       "requests": 42,
-      "failed_requests": 42,
-      "items_fetched": 0,
-      "new_confirmed": 0,
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable"
+      "failed_requests": 0,
+      "items_fetched": 135,
+      "new_confirmed": 2,
+      "last_error": null
     },
     "bing": {
       "label": "Bing",
       "status": "ok",
-      "last_attempt_utc": "2026-11-04T08:16:43.560739+00:00",
-      "last_success_utc": "2026-11-04T08:16:43.560739+00:00",
+      "last_attempt_utc": "2026-11-04T12:24:07.294403+00:00",
+      "last_success_utc": "2026-11-04T12:24:07.294403+00:00",
       "consecutive_failures": 0,
       "requests": 4,
       "failed_requests": 0,
-      "items_fetched": 41,
+      "items_fetched": 40,
       "new_confirmed": 0,
       "last_error": null
     },
     "gdelt": {
       "label": "GDELT",
       "status": "partial",
-      "last_attempt_utc": "2026-11-04T08:16:06.881399+00:00",
-      "last_success_utc": "2026-11-04T08:16:06.881399+00:00",
+      "last_attempt_utc": "2026-11-04T12:23:30.281224+00:00",
+      "last_success_utc": "2026-11-04T12:23:30.281224+00:00",
       "consecutive_failures": 0,
       "requests": 3,
-      "failed_requests": 2,
+      "failed_requests": 1,
       "items_fetched": 0,
       "new_confirmed": 0,
       "last_error": "HTTPError: HTTP Error 429: Too Many Requests"
@@ -61,12 +61,12 @@
     "publisher_rss": {
       "label": "Publisher RSS",
       "status": "ok",
-      "last_attempt_utc": "2026-11-04T08:15:06.374965+00:00",
-      "last_success_utc": "2026-11-04T08:15:06.374965+00:00",
+      "last_attempt_utc": "2026-11-04T12:21:21.174754+00:00",
+      "last_success_utc": "2026-11-04T12:21:21.174754+00:00",
       "consecutive_failures": 0,
       "requests": 8,
       "failed_requests": 0,
-      "items_fetched": 604,
+      "items_fetched": 665,
       "new_confirmed": 1,
       "last_error": null,
       "feeds": [
@@ -115,14 +115,14 @@
         {
           "name": "РБК-Україна",
           "status": "ok",
-          "items_fetched": 488,
+          "items_fetched": 521,
           "new_confirmed": 0,
           "last_error": null
         },
         {
           "name": "UNITED24 Media",
           "status": "ok",
-          "items_fetched": 2,
+          "items_fetched": 30,
           "new_confirmed": 0,
           "last_error": null
         }
@@ -142,12 +142,12 @@
     }
   },
   "google_news_verification": {
-    "candidates_checked": 0,
-    "publisher_opened": 0,
+    "candidates_checked": 3,
+    "publisher_opened": 3,
     "publisher_unavailable": 0,
-    "mention_absent": 0,
-    "confirmed": 0,
-    "already_known": 0
+    "mention_absent": 1,
+    "confirmed": 2,
+    "already_known": 132
   },
   "channel_monitoring": {
     "scope": "public indexed posts only; no private posts or complete social coverage",
@@ -193,20 +193,20 @@
           },
           {
             "query": "\"Artem Veselov\" site:facebook.com",
-            "results": 11,
-            "matching_post_links": 0,
-            "out_of_scope_results": 11,
-            "status": "ok"
-          },
-          {
-            "query": "\"Артем Веселов\" site:facebook.com",
             "results": 10,
             "matching_post_links": 0,
             "out_of_scope_results": 10,
             "status": "ok"
+          },
+          {
+            "query": "\"Артем Веселов\" site:facebook.com",
+            "results": 7,
+            "matching_post_links": 0,
+            "out_of_scope_results": 7,
+            "status": "ok"
           }
         ],
-        "query_scope_violations": 61,
+        "query_scope_violations": 57,
         "status": "partial"
       },
       "Instagram": {
@@ -229,9 +229,9 @@
           },
           {
             "query": "\"TriadaRobotics\" site:instagram.com",
-            "results": 10,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 7,
             "status": "ok"
           },
           {
@@ -250,9 +250,9 @@
           },
           {
             "query": "\"Artem Veselov\" site:instagram.com",
-            "results": 11,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 11,
+            "out_of_scope_results": 7,
             "status": "ok"
           },
           {
@@ -263,7 +263,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 61,
+        "query_scope_violations": 54,
         "status": "partial"
       },
       "X": {
@@ -286,9 +286,9 @@
           },
           {
             "query": "\"TriadaRobotics\" site:x.com",
-            "results": 10,
+            "results": 1,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 1,
             "status": "ok"
           },
           {
@@ -302,21 +302,21 @@
             "query": "\"Триада Роботикс\" site:x.com",
             "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 9,
             "status": "ok"
           },
           {
             "query": "\"Artem Veselov\" site:x.com",
-            "results": 11,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 11,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
             "query": "\"Артем Веселов\" site:x.com",
             "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 9,
             "status": "ok"
           },
           {
@@ -349,9 +349,9 @@
           },
           {
             "query": "\"Artem Veselov\" site:twitter.com",
-            "results": 11,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 11,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -362,7 +362,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 122,
+        "query_scope_violations": 109,
         "status": "partial"
       },
       "YouTube": {
@@ -406,9 +406,9 @@
           },
           {
             "query": "\"Artem Veselov\" site:youtube.com",
-            "results": 11,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 11,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -419,7 +419,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 61,
+        "query_scope_violations": 60,
         "status": "partial"
       },
       "LinkedIn": {
@@ -463,9 +463,9 @@
           },
           {
             "query": "\"Artem Veselov\" site:linkedin.com",
-            "results": 11,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 0,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -476,7 +476,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 50,
+        "query_scope_violations": 60,
         "status": "partial"
       },
       "Telegram": {
@@ -520,20 +520,20 @@
           },
           {
             "query": "\"Artem Veselov\" site:t.me",
-            "results": 11,
-            "matching_post_links": 0,
-            "out_of_scope_results": 11,
-            "status": "ok"
-          },
-          {
-            "query": "\"Артем Веселов\" site:t.me",
             "results": 10,
             "matching_post_links": 0,
             "out_of_scope_results": 10,
             "status": "ok"
+          },
+          {
+            "query": "\"Артем Веселов\" site:t.me",
+            "results": 7,
+            "matching_post_links": 0,
+            "out_of_scope_results": 7,
+            "status": "ok"
           }
         ],
-        "query_scope_violations": 61,
+        "query_scope_violations": 57,
         "status": "partial"
       }
     },
@@ -547,7 +547,7 @@
       "requests": 6,
       "errors": 0,
       "confirmed": 1,
-      "already_known": 1
+      "already_known": 3
     },
     "author_page": {
       "status": "ok",
@@ -573,9 +573,9 @@
     "same_id_as_curated": 10,
     "carried_from_public": 0,
     "new_finds_excluded": 0,
-    "new_finds_duplicate_of_protected": 2,
+    "new_finds_duplicate_of_protected": 4,
     "shared_link_flags": 5,
     "possible_duplicate_flags": 1,
-    "public_total": 327
+    "public_total": 328
   }
 }
