@@ -35,7 +35,7 @@ FLAGS = Path("mentions_flags.json")               # things for a person to look 
 DECISIONS = Path("data/review_decisions.json")       # the owner's answers to "possible duplicate" flags (optional file)
 DECISION_VALUES = ("not_duplicate", "duplicate")
 SHRINK_LIMIT = 0.9                                # a run that would shrink the public file by more than 10% stops instead of saving
-START_DATE = "2026-06-01"
+START_DATE = "2026-04-23"
 
 QUERIES = [
     '"Triada Robotics"',
@@ -1095,24 +1095,8 @@ def read_publisher(url):
 
 
 def fetch(query, region):
-    lang, country, edition = region
-
-    params = urllib.parse.urlencode({
-        "q": f"{query} after:2026-05-31",
-        "hl": lang,
-        "gl": country,
-        "ceid": edition,
-    })
-
-    url = "https://news.google.com/rss/search?" + params
-
-    request = urllib.request.Request(
-        url,
-        headers={"User-Agent": "Mozilla/5.0"}
-    )
-
-    with urllib.request.urlopen(request, timeout=15) as response:
-        return ET.fromstring(response.read()).findall("./channel/item")
+    from tools.google_news import fetch_items
+    return fetch_items(query, region, START_DATE)
 
 
 def fetch_publisher_feed(name, url):
