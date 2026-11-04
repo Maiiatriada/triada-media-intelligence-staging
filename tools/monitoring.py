@@ -18,7 +18,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from tools.tmi_keys import canonical_url
 
-PLATFORMS = {"facebook.com": "Facebook", "instagram.com": "Instagram", "x.com": "X", "twitter.com": "X", "youtube.com": "YouTube", "youtu.be": "YouTube", "linkedin.com": "LinkedIn", "t.me": "Telegram", "tiktok.com": "TikTok", "threads.net": "Threads", "threads.com": "Threads"}
+PLATFORMS = {"reddit.com": "Reddit", "facebook.com": "Facebook", "instagram.com": "Instagram", "x.com": "X", "twitter.com": "X", "youtube.com": "YouTube", "youtu.be": "YouTube", "linkedin.com": "LinkedIn", "t.me": "Telegram", "tiktok.com": "TikTok", "threads.net": "Threads", "threads.com": "Threads"}
 PUBLICATION_DATES = {}
 
 def remember_date(page, url):
@@ -77,6 +77,7 @@ def owned(url, cfg):
 
 def post_url(url):
     p = up.urlsplit(url); path = p.path; name = platform(url)
+    if name == "Reddit": return bool(re.search(r"/comments/[a-z0-9]+/", path))
     if name == "X": return bool(re.search(r"/status/\d+", path))
     if name == "Instagram": return bool(re.match(r"/(p|reel|tv)/[^/]+", path))
     if name == "Facebook": return bool(re.search(r"/(posts|videos|reel)/", path) or p.path in ("/story.php", "/permalink.php", "/photo.php", "/watch/") and p.query)
@@ -184,7 +185,7 @@ def enforce_scope(confirmed, pending, protected):
             if owned(record.get("url", ""), cfg) or owned(record.get("author_url", ""), cfg):
                 del bucket[key]; continue
             name = platform(record.get("url", ""))
-            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description", "native_browser_post"):
+            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description", "native_browser_post") and not (name == "Reddit" and record.get("verification_method") == "reddit_public_feed"):
                 record.update(platform=name, origin="collector", status="review", review_reason="native_content_author_and_publication_date_required")
                 if bucket is confirmed:
                     del confirmed[key]; pending[key] = record
@@ -277,6 +278,9 @@ def collect(confirmed, pending, classify, search):
             for record in records:
                 result = save(record); info[result] = info.get(result, 0) + 1
         except Exception as exc: info.update(status="error", last_error=error_name(exc))
+
+    from tools.reddit_feed import collect as collect_reddit
+    report["reddit_public_feed"] = collect_reddit(cfg, classify, fetch, published, save)
 
     api_key = os.environ.get("YOUTUBE_API_KEY", "").strip()
     if api_key:
