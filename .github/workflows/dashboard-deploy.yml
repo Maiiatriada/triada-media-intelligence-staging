@@ -8,6 +8,9 @@ on:
       - '.github/workflows/dashboard-deploy.yml'
   workflow_dispatch:
   workflow_call:
+    secrets:
+      TRIADA_PORTAL_INGEST_TOKEN:
+        required: true
 permissions:
   contents: read
   pages: write
@@ -46,7 +49,12 @@ jobs:
             --decisions data/review_decisions.json \
             --curated data/mentions_curated.json \
             --out site/tracker/index.html \
-            --report site/tracker/build_report.json
+            --report site/tracker/build_report.json \
+            --emit-records portal-records.json
+      - name: Sync approved tracker to protected team portal
+        env:
+          TRIADA_PORTAL_INGEST_TOKEN: ${{ secrets.TRIADA_PORTAL_INGEST_TOKEN }}
+        run: python tools/publish_tracker.py site/tracker/index.html portal-records.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
