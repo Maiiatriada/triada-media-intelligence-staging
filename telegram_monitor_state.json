@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "channels": {
+    "shrikenews": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-05T09:45:47+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "captain_parker": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-05-12T05:56:53+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "devukraine": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-06-23T15:02:02+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "blagoyruslan": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-09-21T06:48:05+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "podsluhanopechenegi": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2025-06-04T06:34:42+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "kharkiv1794": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-02T14:43:03+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "huyovy_kharkiv": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2018-01-13T17:00:41+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "tgp_news": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-10-18T17:03:12+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "ww3media": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T11:00:02+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "nexta_live": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-21T12:17:18+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "couch_iu": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-26T17:50:07+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "rvvoenkor": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-09-21T06:38:27+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "spalahukr": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-09-21T06:35:53+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "uutishuone": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T04:44:32+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "halyavshik_stream": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2025-06-01T12:00:25+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "express_tribune": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-10-11T14:15:47+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "clashreport": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T10:34:58+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "xronikabpla": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-05-26T17:58:15+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "love_russia_beauty": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-05T08:18:19+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "milinfolive": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2024-03-15T01:11:01+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "ua_rbc": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-08T11:38:10+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "poluavtobia": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-07-25T09:07:04+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "starkon_news": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2024-03-01T01:06:27+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "casusbellilive": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-02-18T22:02:49+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "swodki": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-02-27T18:07:01+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "novosti_n": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-21T12:39:49+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "glavrednet": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2024-09-21T12:31:26+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "sofia_smirnov74": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2024-06-17T01:45:10+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "slavyangrad": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-11-21T12:37:35+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "wpristav": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-08-17T09:37:14+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "therealpolitick": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T11:43:08+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "bratchuk_sergey": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-04-30T11:32:02+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "wartimedia": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-09-21T08:33:52+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "verysexydasha": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-11-03T19:30:13+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "p_raetorio": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-02T12:59:41+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "brov_today": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2025-08-03T07:59:54+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "rbc_ua_news": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-02-28T15:14:07+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "mundomultipolarzov": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-06-03T21:08:10+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "ucrop10": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2025-08-04T14:31:55+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "ucraniando": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-07-05T16:27:01+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "truthwarfreedom": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T10:17:45+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "kaoscanal": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2022-12-07T18:16:26+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "atodapotencia": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-09-16T15:12:10+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "lastnews": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": null,
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_error": "unexpected_channel_identity"
+    },
+    "war_room_news": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-02T13:44:47+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "maxosintintel": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-08-03T08:28:56+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "khersonkamari": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-06-27T19:42:13+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "kvadrat_ua": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2025-06-04T08:31:46+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "wakitaly": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2026-11-04T18:16:56+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    },
+    "the_right_people": {
+      "first_scan_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_attempt_at": "2026-11-05T08:55:17.734794+00:00",
+      "last_status": "ok",
+      "last_checked_at": "2026-11-05T08:55:17.734794+00:00",
+      "oldest_read_at": "2023-12-11T09:53:17+00:00",
+      "last_complete_at": "2026-11-05T08:55:17.734794+00:00"
+    }
+  },
+  "last_run_at": "2026-11-05T08:55:17.734794+00:00"
+}
