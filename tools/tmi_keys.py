@@ -15,6 +15,11 @@ def canonical_url(url):
     """Platform-aware link identity: host without www/m, path without trailing slash, plus only the query keys that identify a post."""
     p = urlsplit(str(url).strip())
     host = re.sub(r"^(www\.|m\.|mobile\.)", "", (p.hostname or "").lower())
+    if host == "t.me":
+        path = re.sub(r"^/s/", "/", p.path)
+        parts = path.split("/")
+        if len(parts) > 1: parts[1] = parts[1].casefold()
+        p = p._replace(path="/".join(parts))
     keep = _KEEP.get(host, set())
     q = "&".join(f"{k}={v}" for k, v in sorted(parse_qsl(p.query)) if k in keep)
     return host + re.sub(r"/+$", "", p.path) + ("?" + q if q else "")

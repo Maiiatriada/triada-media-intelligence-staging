@@ -11,6 +11,7 @@ on:
       - 'data/mentions_curated.json'
       - 'data/review_decisions.json'
       - 'data/monitoring.json'
+      - 'data/telegram_channels.json'
       - 'data/browser_mentions.json'
       - 'tools/**'
       - '.github/workflows/main.yml'
@@ -59,13 +60,26 @@ jobs:
           TRIADA_REQUIRE_CURATED: "1"
         run: python collector.py
 
+      - name: Report Telegram source coverage
+        run: |
+          python - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          r=json.loads(Path('collector_status.json').read_text())['channel_monitoring']['telegram_public_preview']
+          line=f"Telegram: {r.get('available_channels',0)}/{r.get('configured_channels',0)} public feeds reachable, {r.get('complete_channels',0)} complete keyword scans; status={r['status']}."
+          print(line)
+          if r['status'] != 'ok': print('::warning::'+line+' See collector_status.json for deferred sources and limits.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('### Telegram monitoring\n\n'+line+'\n\nPrivate links and sources without public previews are excluded. Publication uses original post dates.\n')
+          PYTHON
+
       - name: Save mentions database
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add mentions.json mentions_review.json mentions_public.json collector_status.json mentions_flags.json
+          git add mentions.json mentions_review.json mentions_public.json collector_status.json mentions_flags.json telegram_monitor_state.json
 
           if ! git diff --cached --quiet; then
             git commit -m "Update TRIADA media mentions"

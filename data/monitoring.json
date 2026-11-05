@@ -38,5 +38,6 @@
     "Артем Веселов"
   ],
   "max_candidates_per_platform": 25,
-  "youtube_max_pages_per_query": 2
+  "youtube_max_pages_per_query": 2,
+  "telegram_public_previews": true
 }
