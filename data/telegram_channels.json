@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "start_date": "2026-04-23",
+  "initial_lookback_days": 7,
+  "overlap_days": 2,
+  "max_pages_per_channel": 1,
+  "max_requests": 450,
+  "max_runtime_seconds": 720,
+  "request_delay_seconds": 0.6,
+  "private_links_skipped": 1,
+  "channels": [
+    {
+      "channel": "ShrikeChat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "ShrikeNews",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "captain_parker",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "devukraine",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "blagoyruslan",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "podsluhanopechenegi",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "kharkiv1794",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "huyovy_kharkiv",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "tgp_news",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "chatdonbasnews1",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "ww3media",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "nexta_live",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "couch_iu",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "RVvoenkor",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "scouting_legion_c",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "spalahUKR",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "uutishuone",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "ukra1nian_chat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "Halyavshik_Stream",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "express_tribune",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "torreddo_chat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "UAVDEVChat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "ClashReport",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "hjg9995",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "rvvoenkor2",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "xronikabpla",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "Love_Russia_Beauty",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "milinfolive",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "ua_rbc",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "chat_milinfolive",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "poluavtobia",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "starkon_news",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "starkon_news_forum",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "casusbellilive",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "swodki",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "novosti_n",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "glavrednet",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "casusbellichat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "sofia_smirnov74",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "kalibratedchat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "Slavyangrad",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "wpristav_su",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "wpristav",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "TheRealPolitick",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "Bratchuk_Sergey",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "wartimedia",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "verysexydasha_homes",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "verysexydasha",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "P_raetorio",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "csvsvhs",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "brov_today",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "RBC_ua_news",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "mundomultipolarZOV",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "chatucraniando",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "ucrop10",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "ucraniando",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "truthwarfreedom",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "KaosCanal",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "atodapotencia",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "lastnews",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "spb_chat777",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "WAR_ROOM_NEWS",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "War_room_group",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "MaxOsintIntel",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "KhersonkaMari",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "tartargon",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "kvadrat_ua",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "WAKItaly",
+      "enabled": true,
+      "initial_status": "public_preview"
+    },
+    {
+      "channel": "sokkuadrochat",
+      "enabled": false,
+      "initial_status": "no_public_preview"
+    },
+    {
+      "channel": "the_Right_People",
+      "enabled": true,
+      "initial_status": "public_preview"
+    }
+  ],
+  "keyword_queries": [
+    "triada",
+    "тріада",
+    "триада",
+    "веселов",
+    "veselov",
+    "veselow"
+  ],
+  "max_search_pages": 2
+}

@@ -185,7 +185,7 @@ def enforce_scope(confirmed, pending, protected):
             if owned(record.get("url", ""), cfg) or owned(record.get("author_url", ""), cfg):
                 del bucket[key]; continue
             name = platform(record.get("url", ""))
-            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description", "native_browser_post") and not (name == "Reddit" and record.get("verification_method") == "reddit_public_feed"):
+            if name != "Media" and record.get("verification_method") not in ("native_structured_post", "youtube_api_title_description", "native_browser_post") and not (name == "Reddit" and record.get("verification_method") == "reddit_public_feed") and not (name == "Telegram" and record.get("verification_method") == "telegram_public_preview"):
                 record.update(platform=name, origin="collector", status="review", review_reason="native_content_author_and_publication_date_required")
                 if bucket is confirmed:
                     del confirmed[key]; pending[key] = record
@@ -278,6 +278,9 @@ def collect(confirmed, pending, classify, search):
             for record in records:
                 result = save(record); info[result] = info.get(result, 0) + 1
         except Exception as exc: info.update(status="error", last_error=error_name(exc))
+
+    from tools.telegram_preview import collect as collect_telegram
+    report["telegram_public_preview"] = collect_telegram(classify, fetch, published, save) if cfg.get("telegram_public_previews") else {"status":"not_configured"}
 
     from tools.reddit_feed import collect as collect_reddit
     report["reddit_public_feed"] = collect_reddit(cfg, classify, fetch, published, save)

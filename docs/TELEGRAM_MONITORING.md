@@ -1,0 +1,11 @@
+# Public Telegram monitoring
+
+The owner requested daily monitoring of public channels referenced by the approved historical archive. Initial audit on 2026-11-04 found 70 distinct valid public usernames:50 have readable public web previews;20 have no public message history. One private-format link is excluded entirely. The allowlist and disabled sources are in data/telegram_channels.json. No account, phone number, cookie, bot token, channel join or paid/global search is used.
+
+The existing daily07:00UTC collector reads recent posts and Telegram's own public channel keyword search for triada, тріада, триада, веселов, veselov and veselow. This server collection does not consume the separate weekly browser-monitoring task. Each post requires the native channel/postID, matching permalink and author URL, actual publication time and original text caption. Preview cards and channel descriptions do not confirm a mention. Media without text cannot be analyzed by this connector. Relevance uses the existing Company/CEO/Product classifier.
+
+The first scan looks back7days; subsequent successful scans overlap2days. State is saved to telegram_monitor_state.json only after the collector safely saves the mentions and diagnostics. Interrupted or incomplete searches do not advance last_complete_at. URL aliases /s/ and username case are normalized for deduplication without rewriting curated records. Exclusions, duplicate flags and all311curated records remain protected.
+
+Limits: one latest-post page plus at most2pages per keyword/source;450HTTPrequests and12minutes total per run, with spacing between requests. These are explicit bounds, not complete Telegram coverage. A temporary429/5xx is retried once when the requested wait fits the time budget; persistent429defers remaining requests. Empty search results are accepted only on a verified public channel preview. Sources without public history are disabled and listed for later reassessment.
+
+collector_status.json/channel_monitoring/telegram_public_preview reports each source, query outcomes, counts, failed/deferred requests and coverage gaps. The Actions summary flags degraded runs. Only validated records enter the existing approved Library/Overview build and protected portal sync. Search success is not a claim that a new mention was found; count net additions after deduplication and approval filters.

@@ -1594,6 +1594,9 @@ def _run():
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
+    from tools.telegram_preview import commit_state as commit_telegram_state
+    commit_telegram_state()
+
     print(f"New confirmed from Google News: {added}")
     print(f"Confirmed via publisher feeds: {publisher_added}")
     print(f"Total confirmed: {len(confirmed)}")
