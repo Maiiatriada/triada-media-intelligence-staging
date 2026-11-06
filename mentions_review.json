@@ -438,5 +438,23 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-02T08:21:09.281475+00:00"
+  },
+  {
+    "url": "https://www.instagram.com/p/DbZWGJGHHXU/",
+    "platform": "Instagram",
+    "title": "Newsmax | HHS Sec. RFK Jr. posted an edit of himself holding ...",
+    "source": "Instagram",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Тріада Роботікс\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "99dacde1ee026a9f84371f1dfc0d6795969fc4711db524725287a7b8f2011640",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-06T08:08:52.478217+00:00"
   }
 ]
