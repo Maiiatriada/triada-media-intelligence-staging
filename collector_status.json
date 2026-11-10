@@ -1,5 +1,5 @@
 {
-  "last_run_utc": "2026-11-09T08:24:14.642000+00:00",
+  "last_run_utc": "2026-11-10T08:10:58.695580+00:00",
   "confirmed_total": 41,
   "pending_internal": 28,
   "google_news_added": 2,
@@ -16,17 +16,17 @@
     "not_run": "The connector made no requests in this run."
   },
   "run": {
-    "started_utc": "2026-11-09T08:13:13.355658+00:00",
-    "finished_utc": "2026-11-09T08:24:14.642522+00:00",
-    "duration_seconds": 661.3,
-    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/42584334819"
+    "started_utc": "2026-11-10T07:59:54.278836+00:00",
+    "finished_utc": "2026-11-10T08:10:58.696128+00:00",
+    "duration_seconds": 664.4,
+    "github_run_url": "https://github.com/Maiiatriada/triada-media-intelligence-staging/actions/runs/42779199156"
   },
   "connectors": {
     "google_news": {
       "label": "Google News",
       "status": "ok",
-      "last_attempt_utc": "2026-11-09T08:14:16.460808+00:00",
-      "last_success_utc": "2026-11-09T08:14:16.460808+00:00",
+      "last_attempt_utc": "2026-11-10T08:00:58.656123+00:00",
+      "last_success_utc": "2026-11-10T08:00:58.656123+00:00",
       "consecutive_failures": 0,
       "requests": 42,
       "failed_requests": 0,
@@ -37,36 +37,36 @@
     "bing": {
       "label": "Bing",
       "status": "ok",
-      "last_attempt_utc": "2026-11-09T08:17:05.580336+00:00",
-      "last_success_utc": "2026-11-09T08:17:05.580336+00:00",
+      "last_attempt_utc": "2026-11-10T08:03:40.982870+00:00",
+      "last_success_utc": "2026-11-10T08:03:40.982870+00:00",
       "consecutive_failures": 0,
       "requests": 4,
       "failed_requests": 0,
-      "items_fetched": 40,
+      "items_fetched": 37,
       "new_confirmed": 0,
       "last_error": null
     },
     "gdelt": {
       "label": "GDELT",
       "status": "partial",
-      "last_attempt_utc": "2026-11-09T08:16:23.410355+00:00",
-      "last_success_utc": "2026-11-09T08:16:23.410355+00:00",
+      "last_attempt_utc": "2026-11-10T08:03:21.795997+00:00",
+      "last_success_utc": "2026-11-10T08:03:21.795997+00:00",
       "consecutive_failures": 0,
       "requests": 3,
-      "failed_requests": 2,
+      "failed_requests": 1,
       "items_fetched": 0,
       "new_confirmed": 0,
-      "last_error": "URLError: <urlopen error _ssl.c:1001: The handshake operation timed out>"
+      "last_error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     "publisher_rss": {
       "label": "Publisher RSS",
       "status": "ok",
-      "last_attempt_utc": "2026-11-09T08:14:37.840159+00:00",
-      "last_success_utc": "2026-11-09T08:14:37.840159+00:00",
+      "last_attempt_utc": "2026-11-10T08:01:20.110746+00:00",
+      "last_success_utc": "2026-11-10T08:01:20.110746+00:00",
       "consecutive_failures": 0,
       "requests": 8,
       "failed_requests": 0,
-      "items_fetched": 539,
+      "items_fetched": 541,
       "new_confirmed": 1,
       "last_error": null,
       "feeds": [
@@ -115,7 +115,7 @@
         {
           "name": "РБК-Україна",
           "status": "ok",
-          "items_fetched": 395,
+          "items_fetched": 397,
           "new_confirmed": 0,
           "last_error": null
         },
@@ -167,14 +167,14 @@
             "query": "\"Triada Robotics\" site:facebook.com",
             "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 9,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
             "query": "\"TriadaRobotics\" site:facebook.com",
-            "results": 2,
+            "results": 3,
             "matching_post_links": 0,
-            "out_of_scope_results": 2,
+            "out_of_scope_results": 3,
             "status": "ok"
           },
           {
@@ -186,9 +186,9 @@
           },
           {
             "query": "\"Триада Роботикс\" site:facebook.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -200,13 +200,13 @@
           },
           {
             "query": "\"Артем Веселов\" site:facebook.com",
-            "results": 10,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 7,
             "status": "ok"
           }
         ],
-        "query_scope_violations": 48,
+        "query_scope_violations": 50,
         "status": "partial"
       },
       "Instagram": {
@@ -243,9 +243,9 @@
           },
           {
             "query": "\"Триада Роботикс\" site:instagram.com",
-            "results": 10,
+            "results": 14,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 14,
             "status": "ok"
           },
           {
@@ -257,13 +257,13 @@
           },
           {
             "query": "\"Артем Веселов\" site:instagram.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           }
         ],
-        "query_scope_violations": 56,
+        "query_scope_violations": 63,
         "status": "partial"
       },
       "X": {
@@ -356,13 +356,13 @@
           },
           {
             "query": "\"Артем Веселов\" site:twitter.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           }
         ],
-        "query_scope_violations": 114,
+        "query_scope_violations": 117,
         "status": "partial"
       },
       "YouTube": {
@@ -392,9 +392,9 @@
           },
           {
             "query": "\"Тріада Роботікс\" site:youtube.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -413,13 +413,13 @@
           },
           {
             "query": "\"Артем Веселов\" site:youtube.com",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           }
         ],
-        "query_scope_violations": 54,
+        "query_scope_violations": 60,
         "status": "partial"
       },
       "LinkedIn": {
@@ -442,16 +442,16 @@
           },
           {
             "query": "\"TriadaRobotics\" site:linkedin.com",
-            "results": 10,
+            "results": 7,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 7,
             "status": "ok"
           },
           {
             "query": "\"Тріада Роботікс\" site:linkedin.com",
-            "results": 10,
+            "results": 14,
             "matching_post_links": 0,
-            "out_of_scope_results": 10,
+            "out_of_scope_results": 14,
             "status": "ok"
           },
           {
@@ -476,7 +476,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 60,
+        "query_scope_violations": 61,
         "status": "partial"
       },
       "Telegram": {
@@ -513,9 +513,9 @@
           },
           {
             "query": "\"Триада Роботикс\" site:t.me",
-            "results": 7,
+            "results": 10,
             "matching_post_links": 0,
-            "out_of_scope_results": 7,
+            "out_of_scope_results": 10,
             "status": "ok"
           },
           {
@@ -533,7 +533,7 @@
             "status": "ok"
           }
         ],
-        "query_scope_violations": 57,
+        "query_scope_violations": 60,
         "status": "partial"
       }
     },
@@ -560,7 +560,7 @@
       "scope": "allowlisted public web previews only; text captions, bounded pagination",
       "requests": 350,
       "errors": 1,
-      "posts_read": 1190,
+      "posts_read": 1203,
       "confirmed": 0,
       "already_known": 0,
       "excluded_private_links": 1,
@@ -571,10 +571,10 @@
         "ShrikeNews": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 19,
+          "posts_read": 23,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -610,13 +610,13 @@
         "captain_parker": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 16,
+          "posts_read": 23,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 0,
+          "media_without_text": 1,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -652,7 +652,7 @@
           "posts_read": 21,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -688,10 +688,10 @@
         "blagoyruslan": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 21,
+          "posts_read": 22,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -727,10 +727,10 @@
         "podsluhanopechenegi": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 14,
+          "posts_read": 15,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 2,
@@ -766,10 +766,10 @@
         "kharkiv1794": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 20,
+          "posts_read": 13,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -805,13 +805,13 @@
         "huyovy_kharkiv": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 24,
+          "posts_read": 25,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 0,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -844,10 +844,10 @@
         "tgp_news": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 27,
+          "posts_read": 32,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -886,13 +886,13 @@
         "ww3media": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 19,
+          "posts_read": 18,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 3,
+          "media_without_text": 2,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -928,7 +928,7 @@
           "posts_read": 29,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -964,10 +964,10 @@
         "couch_iu": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 28,
+          "posts_read": 24,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1003,10 +1003,10 @@
         "RVvoenkor": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 28,
+          "posts_read": 29,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1045,10 +1045,10 @@
         "spalahUKR": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 27,
+          "posts_read": 26,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1084,13 +1084,13 @@
         "uutishuone": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 10,
+          "posts_read": 17,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 0,
+          "media_without_text": 1,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -1126,49 +1126,10 @@
         "Halyavshik_Stream": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 34,
+          "posts_read": 25,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
-          "limit_reached": false,
-          "invalid_posts": 0,
-          "media_without_text": 3,
-          "keyword_search": {
-            "triada": {
-              "status": "ok",
-              "pages": 1
-            },
-            "тріада": {
-              "status": "ok",
-              "pages": 1
-            },
-            "триада": {
-              "status": "ok",
-              "pages": 1
-            },
-            "веселов": {
-              "status": "ok",
-              "pages": 1
-            },
-            "veselov": {
-              "status": "ok",
-              "pages": 1
-            },
-            "veselow": {
-              "status": "ok",
-              "pages": 1
-            }
-          },
-          "latest_feed_truncated": true,
-          "coverage_basis": "native_keyword_search_plus_latest_posts"
-        },
-        "express_tribune": {
-          "status": "ok",
-          "pages": 7,
-          "posts_read": 21,
-          "confirmed": 0,
-          "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1201,6 +1162,45 @@
           "latest_feed_truncated": true,
           "coverage_basis": "native_keyword_search_plus_latest_posts"
         },
+        "express_tribune": {
+          "status": "ok",
+          "pages": 7,
+          "posts_read": 24,
+          "confirmed": 0,
+          "already_known": 0,
+          "since": "2026-11-07T08:17:49.272496+00:00",
+          "limit_reached": false,
+          "invalid_posts": 0,
+          "media_without_text": 0,
+          "keyword_search": {
+            "triada": {
+              "status": "ok",
+              "pages": 1
+            },
+            "тріада": {
+              "status": "ok",
+              "pages": 1
+            },
+            "триада": {
+              "status": "ok",
+              "pages": 1
+            },
+            "веселов": {
+              "status": "ok",
+              "pages": 1
+            },
+            "veselov": {
+              "status": "ok",
+              "pages": 1
+            },
+            "veselow": {
+              "status": "ok",
+              "pages": 1
+            }
+          },
+          "latest_feed_truncated": false,
+          "coverage_basis": "native_keyword_search_plus_latest_posts"
+        },
         "torreddo_chat": {
           "status": "disabled_no_public_preview"
         },
@@ -1210,10 +1210,10 @@
         "ClashReport": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 20,
+          "posts_read": 21,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1255,10 +1255,10 @@
         "xronikabpla": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 23,
+          "posts_read": 24,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 1,
@@ -1294,10 +1294,10 @@
         "Love_Russia_Beauty": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 24,
+          "posts_read": 23,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1333,10 +1333,10 @@
         "milinfolive": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 34,
+          "posts_read": 30,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1375,7 +1375,7 @@
           "posts_read": 30,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1414,10 +1414,10 @@
         "poluavtobia": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 61,
+          "posts_read": 60,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1456,7 +1456,7 @@
           "posts_read": 26,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1498,7 +1498,7 @@
           "posts_read": 23,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1534,13 +1534,13 @@
         "swodki": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 45,
+          "posts_read": 40,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 2,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -1573,10 +1573,10 @@
         "novosti_n": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 23,
+          "posts_read": 17,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1612,10 +1612,10 @@
         "glavrednet": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 19,
+          "posts_read": 22,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1654,13 +1654,13 @@
         "sofia_smirnov74": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 18,
+          "posts_read": 21,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 0,
+          "media_without_text": 1,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -1696,10 +1696,10 @@
         "Slavyangrad": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 19,
+          "posts_read": 14,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1738,49 +1738,10 @@
         "wpristav": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 43,
+          "posts_read": 41,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
-          "limit_reached": false,
-          "invalid_posts": 0,
-          "media_without_text": 1,
-          "keyword_search": {
-            "triada": {
-              "status": "ok",
-              "pages": 1
-            },
-            "тріада": {
-              "status": "ok",
-              "pages": 1
-            },
-            "триада": {
-              "status": "ok",
-              "pages": 1
-            },
-            "веселов": {
-              "status": "ok",
-              "pages": 1
-            },
-            "veselov": {
-              "status": "ok",
-              "pages": 1
-            },
-            "veselow": {
-              "status": "ok",
-              "pages": 1
-            }
-          },
-          "latest_feed_truncated": true,
-          "coverage_basis": "native_keyword_search_plus_latest_posts"
-        },
-        "TheRealPolitick": {
-          "status": "ok",
-          "pages": 7,
-          "posts_read": 18,
-          "confirmed": 0,
-          "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1813,13 +1774,52 @@
           "latest_feed_truncated": true,
           "coverage_basis": "native_keyword_search_plus_latest_posts"
         },
+        "TheRealPolitick": {
+          "status": "ok",
+          "pages": 7,
+          "posts_read": 15,
+          "confirmed": 0,
+          "already_known": 0,
+          "since": "2026-11-07T08:17:49.272496+00:00",
+          "limit_reached": false,
+          "invalid_posts": 0,
+          "media_without_text": 1,
+          "keyword_search": {
+            "triada": {
+              "status": "ok",
+              "pages": 1
+            },
+            "тріада": {
+              "status": "ok",
+              "pages": 1
+            },
+            "триада": {
+              "status": "ok",
+              "pages": 1
+            },
+            "веселов": {
+              "status": "ok",
+              "pages": 1
+            },
+            "veselov": {
+              "status": "ok",
+              "pages": 1
+            },
+            "veselow": {
+              "status": "ok",
+              "pages": 1
+            }
+          },
+          "latest_feed_truncated": true,
+          "coverage_basis": "native_keyword_search_plus_latest_posts"
+        },
         "Bratchuk_Sergey": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 28,
+          "posts_read": 27,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 1,
@@ -1855,10 +1855,10 @@
         "wartimedia": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 21,
+          "posts_read": 15,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -1900,10 +1900,10 @@
           "posts_read": 20,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 0,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -1936,13 +1936,13 @@
         "P_raetorio": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 15,
+          "posts_read": 18,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 0,
+          "media_without_text": 1,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -1978,10 +1978,10 @@
         "brov_today": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 21,
+          "posts_read": 22,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2017,10 +2017,10 @@
         "RBC_ua_news": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 21,
+          "posts_read": 23,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2056,13 +2056,13 @@
         "mundomultipolarZOV": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 32,
+          "posts_read": 39,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 0,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -2098,10 +2098,10 @@
         "ucrop10": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 23,
+          "posts_read": 22,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 1,
@@ -2137,10 +2137,10 @@
         "ucraniando": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 39,
+          "posts_read": 34,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2176,13 +2176,13 @@
         "truthwarfreedom": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 13,
+          "posts_read": 21,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 0,
+          "media_without_text": 2,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -2215,10 +2215,10 @@
         "KaosCanal": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 35,
+          "posts_read": 38,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2254,10 +2254,10 @@
         "atodapotencia": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 29,
+          "posts_read": 35,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2287,7 +2287,7 @@
               "pages": 1
             }
           },
-          "latest_feed_truncated": true,
+          "latest_feed_truncated": false,
           "coverage_basis": "native_keyword_search_plus_latest_posts"
         },
         "lastnews": {
@@ -2296,7 +2296,7 @@
           "posts_read": 0,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2336,10 +2336,10 @@
         "WAR_ROOM_NEWS": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 16,
+          "posts_read": 20,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2378,13 +2378,13 @@
         "MaxOsintIntel": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 21,
+          "posts_read": 20,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 0,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -2417,10 +2417,10 @@
         "KhersonkaMari": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 16,
+          "posts_read": 21,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2462,7 +2462,7 @@
           "posts_read": 22,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
@@ -2501,10 +2501,10 @@
           "posts_read": 20,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
-          "media_without_text": 1,
+          "media_without_text": 0,
           "keyword_search": {
             "triada": {
               "status": "ok",
@@ -2540,10 +2540,10 @@
         "the_Right_People": {
           "status": "ok",
           "pages": 7,
-          "posts_read": 14,
+          "posts_read": 13,
           "confirmed": 0,
           "already_known": 0,
-          "since": "2026-11-06T07:54:23.677521+00:00",
+          "since": "2026-11-07T08:17:49.272496+00:00",
           "limit_reached": false,
           "invalid_posts": 0,
           "media_without_text": 0,
