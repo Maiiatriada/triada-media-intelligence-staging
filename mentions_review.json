@@ -456,5 +456,23 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-06T08:08:52.478217+00:00"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wz7I-qdCeUA",
+    "platform": "YouTube",
+    "title": "Триада: 1 сезон, 1-8 серии подряд - YouTube",
+    "source": "YouTube",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Триада Роботикс\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "35bd51d9713261e6b65118b73fd20221649aaeacd03cf68442c634a21e176a01",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-13T08:13:21.160979+00:00"
   }
 ]
