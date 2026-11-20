@@ -2647,10 +2647,10 @@
       "\"Triada Robotics\""
     ],
     "status": "review",
+    "platform": "Media",
     "categories": [
       "Company"
-    ],
-    "platform": "Media"
+    ]
   },
   {
     "id": "b24-r195",
@@ -8005,6 +8005,28 @@
     "discovered_at": "2026-11-04T12:39:57.433525+00:00"
   },
   {
+    "id": "7b7290f3260be7ffbfa74ae79ff408492cb30698be8bef39391d53838b6bb49b",
+    "title": "Turbojet 'Bravo': How Ukrainian Startup Triada Robotics is Changing the ...",
+    "source": "Bing Search",
+    "published_at": "2026-06-24T12:31:38.010000+00:00",
+    "url": "https://xab.info/en/posts/turbojet-bravo-how-ukrainian-startup-triada-robotics-is-changing-the-rules-of-the-sky",
+    "direct_url": "https://xab.info/en/posts/turbojet-bravo-how-ukrainian-startup-triada-robotics-is-changing-the-rules-of-the-sky",
+    "keyword": "Bing Search",
+    "status": "relevant",
+    "verification_method": "verified_web_article",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "significant distances. A vivid example of this evolution is the development by Triada Robotics — the heavy long-range unmanned aerial vehicle Bravo. Turbojet Strike: Speed as the Main Weapon The flagship product of",
+    "date_source": "publisher_metadata_or_feed",
+    "platform": "Media"
+  },
+  {
     "id": "hist-46-ukrayinatestuienoviybpla",
     "title": "Bravo drone report repost",
     "source": "Рада Львів",
@@ -9149,5 +9171,48 @@
     "identity_version": "url-v1",
     "discovered_at": "2026-11-13T08:13:21.160979+00:00",
     "categories": []
+  },
+  {
+    "id": "b44c0d879826b8c3a15a05235debfeb0ccdb81ad70079177d98568c5c1fc4b9b",
+    "title": "Triada Robotics - Ukrainian Drone Ecosystem Directory",
+    "source": "Bing Search",
+    "published_at": "",
+    "url": "https://www.drone-directory.com.ua/profile/strix/",
+    "direct_url": "https://www.drone-directory.com.ua/profile/strix/",
+    "keyword": "Bing Search",
+    "status": "review",
+    "verification_method": "verified_web_article",
+    "categories": [
+      "Company",
+      "CEO",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "Triada Robotics - Ukrainian Drone Ecosystem Directory Skip to content Triada Robotics About Triada Robotics is a Ukrainian veteran-foun",
+    "origin": "collector",
+    "review_reason": "publication_date_required",
+    "platform": "Media"
+  },
+  {
+    "id": "052ab25198a75c0883c84c1d5218b7dc5e42fceec64cdaae2498d5155532955b",
+    "title": "TRIADA ROBOTICS OÜ (17529420) - Overview - Inforegister.ee",
+    "source": "Bing Search",
+    "published_at": "",
+    "url": "https://www.inforegister.ee/en/17529420-TRIADA-ROBOTICS-OU/",
+    "direct_url": "https://www.inforegister.ee/en/17529420-TRIADA-ROBOTICS-OU/",
+    "keyword": "Bing Search",
+    "status": "review",
+    "verification_method": "verified_web_article",
+    "categories": [
+      "CEO"
+    ],
+    "products": [],
+    "matched_text": "ees is missing Paid labor taxes (2026 III qtr) No labour taxes paid Key players Artem Veselov Reputation scores \t... Forecast turnover (2026) €21,174 Increases by  2,117,400% compared to last year. Average monthly",
+    "origin": "collector",
+    "review_reason": "publication_date_required",
+    "platform": "Media"
   }
 ]

@@ -500,5 +500,48 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-13T08:13:21.160979+00:00"
+  },
+  {
+    "id": "b44c0d879826b8c3a15a05235debfeb0ccdb81ad70079177d98568c5c1fc4b9b",
+    "title": "Triada Robotics - Ukrainian Drone Ecosystem Directory",
+    "source": "Bing Search",
+    "published_at": "",
+    "url": "https://www.drone-directory.com.ua/profile/strix/",
+    "direct_url": "https://www.drone-directory.com.ua/profile/strix/",
+    "keyword": "Bing Search",
+    "status": "review",
+    "verification_method": "verified_web_article",
+    "categories": [
+      "Company",
+      "CEO",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "Triada Robotics - Ukrainian Drone Ecosystem Directory Skip to content Triada Robotics About Triada Robotics is a Ukrainian veteran-foun",
+    "origin": "collector",
+    "review_reason": "publication_date_required",
+    "platform": "Media"
+  },
+  {
+    "id": "052ab25198a75c0883c84c1d5218b7dc5e42fceec64cdaae2498d5155532955b",
+    "title": "TRIADA ROBOTICS OÜ (17529420) - Overview - Inforegister.ee",
+    "source": "Bing Search",
+    "published_at": "",
+    "url": "https://www.inforegister.ee/en/17529420-TRIADA-ROBOTICS-OU/",
+    "direct_url": "https://www.inforegister.ee/en/17529420-TRIADA-ROBOTICS-OU/",
+    "keyword": "Bing Search",
+    "status": "review",
+    "verification_method": "verified_web_article",
+    "categories": [
+      "CEO"
+    ],
+    "products": [],
+    "matched_text": "ees is missing Paid labor taxes (2026 III qtr) No labour taxes paid Key players Artem Veselov Reputation scores \t... Forecast turnover (2026) €21,174 Increases by  2,117,400% compared to last year. Average monthly",
+    "origin": "collector",
+    "review_reason": "publication_date_required",
+    "platform": "Media"
   }
 ]
