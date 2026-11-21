@@ -2644,6 +2644,7 @@
     "published_at": "2026-08-04T07:00:00+00:00",
     "keyword": "\"Triada Robotics\"",
     "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
       "\"Triada Robotics\""
     ],
     "status": "review",
@@ -9214,5 +9215,43 @@
     "origin": "collector",
     "review_reason": "publication_date_required",
     "platform": "Media"
+  },
+  {
+    "url": "https://www.facebook.com/thebrownsingers/videos/work-on-me%EF%B8%8F/1163212941487753/",
+    "platform": "Facebook",
+    "title": "Work on Me‼️ | Lisa Knowles-Smith & the Brown Singers",
+    "source": "Facebook",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Тріада Роботікс\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "ef523ecab7fc639513d48e5e671c147dda744e3c8045f5fbe39b0151828ddd72",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-21T08:05:51.694105+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://www.facebook.com/thebrownsingers/videos/lisa-knowles-and-the-brown-singers-work-on-me/881054941930147/",
+    "platform": "Facebook",
+    "title": "Last night in Little Rock, AR #WorkOnMe | Lisa Knowles-Smith ...",
+    "source": "Facebook",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Тріада Роботікс\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "730a6bf22ebd78c866a389e7fc04431dc09362d600a70034d58d78d1c7cf116c",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-21T08:05:51.931980+00:00",
+    "categories": []
   }
 ]

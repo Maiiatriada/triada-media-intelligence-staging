@@ -292,6 +292,7 @@
     "matched_queries": [
       "\"BRAVO\" \"Triada Robotics\"",
       "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada Robotics\"",
       "\"Triada\" \"BRAVO\""
     ],
     "platform": "Media",
