@@ -103,6 +103,32 @@
     "platform": "Media"
   },
   {
+    "id": "5c3d3c03ab9a44a8a19150b4f2339cf7630de5e669ebd1ac648a7eae35ddd7e3",
+    "title": "Iran Strikes U.S. Bases in the Region in New Escalation Cycle - Мілітарний",
+    "source": "Мілітарний",
+    "url": "https://militarnyi.com/en/blogs/iran-strikes-u-s-bases-in-the-region-in-new-escalation-cycle/",
+    "published_at": "2026-09-02T07:00:00+00:00",
+    "keyword": "\"Artem Veselov\" \"drone\"",
+    "matched_queries": [
+      "\"Artem Veselov\" \"drone\""
+    ],
+    "status": "review",
+    "platform": "Media"
+  },
+  {
+    "id": "1e050663b35ece877b4d819fddee6a44d6a59c97cc38b6d8bc52d05e3cb956c0",
+    "title": "NB8 in a Week: Billion-Dollar Deals in Kyiv, an Alarming Signal From Moscow, and Air Defense Systems Near Vilnius - Мілітарний",
+    "source": "Мілітарний",
+    "url": "https://militarnyi.com/en/blogs/nb8-in-a-week-billion-dollar-deals-in-kyiv-an-alarming-signal-from-moscow-and-air-defense-systems-near-vilnius/",
+    "published_at": "2026-08-30T07:00:00+00:00",
+    "keyword": "\"Artem Veselov\" \"drone\"",
+    "matched_queries": [
+      "\"Artem Veselov\" \"drone\""
+    ],
+    "status": "review",
+    "platform": "Media"
+  },
+  {
     "id": "6d90a540881cec32fec4db07dc508ecf7906a7051cc7a5a7a94cdaec24874b24",
     "title": "Global Changes to Roaming Availability for Starlink Users - Мілітарний",
     "source": "Мілітарний",
@@ -172,7 +198,9 @@
     "keyword": "\"Triada Robotics\"",
     "matched_queries": [
       "\"BRAVO\" \"Triada Robotics\"",
-      "\"Triada Robotics\""
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
     ],
     "status": "review",
     "platform": "Media"
