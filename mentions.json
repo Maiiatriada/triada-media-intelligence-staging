@@ -748,6 +748,36 @@
     "direct_url": "https://www.rbc.ua/ukr/news/shi-bortu-i-dalnist-2000-km-ukrayina-testue-1782284412.html"
   },
   {
+    "id": "8b9418e2075a64782d99cbc9e5d5374ba5824fcf5339c508635402182227b1fd",
+    "title": "Україна розробляє безпілотник з дальністю польоту 2000 км – що відомо про Bravo. - reNews - reNews",
+    "source": "reNews",
+    "url": "https://renews.com.ua/tehnologiyi/ykrayina-rozrobliaye-bezpilotnik-z-dalnistu-poloty-2000-km-sho-vidomo-pro-bravo/",
+    "published_at": "2026-06-24T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"KILO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\"",
+      "\"Triada\" \"KILO\""
+    ],
+    "status": "relevant",
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "24 Червня, 2026  234 Аналог Anduril – Україна розробляє новий дипстрайк (фото: Triada Robotics) В Україні створюється новий дальнобійний безпілотник Bravo. Розробкою технології займається компанія Triada Robotics,",
+    "verification_method": "article_body",
+    "direct_url": "https://renews.com.ua/tehnologiyi/ykrayina-rozrobliaye-bezpilotnik-z-dalnistu-poloty-2000-km-sho-vidomo-pro-bravo/"
+  },
+  {
     "id": "97f5088da6394688367c934425e83f821dbbe5d11893a09dae163f15f235cdc7",
     "title": "Ukraine’s Triada Robotics is developing a deep strike drone with a 2,000 km range. What is the company’s strategy? - Defender Media",
     "source": "Defender Media",

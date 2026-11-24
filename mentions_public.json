@@ -8348,18 +8348,31 @@
     "id": "8b9418e2075a64782d99cbc9e5d5374ba5824fcf5339c508635402182227b1fd",
     "title": "Україна розробляє безпілотник з дальністю польоту 2000 км – що відомо про Bravo. - reNews - reNews",
     "source": "reNews",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMEJWSmtmMjVvaFBjS2hLdFpZa1lVQUlOVE5GTkxIODB1VzYyYnN1SDJBWmNlLU93SGlMYUotVl94cm1GQUJ3N1RIT1NVQ1lFU2Zjc002RDFXNFA5bWpqUHVaaGV4NXpYeUZNbXlpb0lTX2VyS1dxRks2b09EaUZPVGhBN0pqT015RGc1d1lZWHI1bEtzMjVHY0h5Y0VBem1OMHE2V2prMHNPZVJNd24wX2JFaTXSAboBQVVfeXFMT05UNEFGeXVaS2l6YmNFTFQ1Ynd4bGVIQk1uRjN6WkxrN0kxQnkySU1hZGFoaXo5SjQ2Vm56Y01FaS1LV3gtbEY1MERIRTRaN0hnR2pNZVRrYTFLRG1URkNkMGRWaFprdTFIeENEUnE3aFBaUzg1QUNoV2l6ZVM3cE9mNnZaY3lXanczQS1yYmR1eUx2WEpNN1F0QVZLbFNlN01kdnY2QlZZcmd1bEdmUFFyVXZvQTl1TU9n?oc=5",
+    "url": "https://renews.com.ua/tehnologiyi/ykrayina-rozrobliaye-bezpilotnik-z-dalnistu-poloty-2000-km-sho-vidomo-pro-bravo/",
     "published_at": "2026-06-24T07:00:00+00:00",
     "keyword": "\"Triada Robotics\"",
     "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"KILO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
       "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\"",
       "\"Triada\" \"KILO\""
     ],
-    "status": "review",
+    "status": "relevant",
+    "platform": "Media",
     "categories": [
-      "Company"
+      "Company",
+      "Products"
     ],
-    "platform": "Media"
+    "products": [
+      "BRAVO",
+      "KILO"
+    ],
+    "matched_text": "24 Червня, 2026  234 Аналог Anduril – Україна розробляє новий дипстрайк (фото: Triada Robotics) В Україні створюється новий дальнобійний безпілотник Bravo. Розробкою технології займається компанія Triada Robotics,",
+    "verification_method": "article_body",
+    "direct_url": "https://renews.com.ua/tehnologiyi/ykrayina-rozrobliaye-bezpilotnik-z-dalnistu-poloty-2000-km-sho-vidomo-pro-bravo/"
   },
   {
     "id": "b24-r178",
@@ -9303,6 +9316,26 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-21T08:05:51.931980+00:00",
+    "categories": []
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=XmZlrDfs17g",
+    "platform": "YouTube",
+    "title": "For $7.99, you WANT this Côtes du Rhône from the famous Famille Perrin ...",
+    "source": "YouTube",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Artem Veselov\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "verification_error": "HTTP 429",
+    "id": "6f330b10f06fc18dad8abb7fb2f302b1980cc50d5365cbb5724118c6b059a1fe",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-24T18:36:49.929194+00:00",
     "categories": []
   }
 ]
