@@ -184,7 +184,10 @@
     "published_at": "2026-08-04T07:00:00+00:00",
     "keyword": "\"Triada Robotics\"",
     "matched_queries": [
-      "\"Triada Robotics\""
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
     ],
     "status": "review",
     "platform": "Media"
@@ -627,5 +630,23 @@
     "origin": "collector",
     "identity_version": "url-v1",
     "discovered_at": "2026-11-24T18:36:49.929194+00:00"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8xq00v2rrBM",
+    "platform": "YouTube",
+    "title": "Artyom Lived From 0 to 100 Years – Birth to Death! - YouTube",
+    "source": "YouTube",
+    "published_at": "",
+    "status": "review",
+    "review_reason": "native_content_author_and_publication_date_required",
+    "discovery_method": "bing_site_search",
+    "matched_queries": [
+      "\"Артем Веселов\""
+    ],
+    "verification_method": "unverified_search_candidate",
+    "id": "66ed8473291d70919e77bcb839054345e7d6518c3954e4853f74c2b9829e556a",
+    "origin": "collector",
+    "identity_version": "url-v1",
+    "discovered_at": "2026-11-26T17:32:58.559310+00:00"
   }
 ]
