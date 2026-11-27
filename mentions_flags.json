@@ -4,6 +4,33 @@
   "flags": [
     {
       "type": "shared_link",
+      "link": "euromaidanpress.com/2026/08/06/ukraines-new-drone-is-a-cousin-to-americas-stealth-bombers-it-reaches-ufa-in-three-hours",
+      "action": "review by a person: both records are kept, nothing was deleted or merged",
+      "records": [
+        {
+          "id": "hist-26-treachesufainthreehours",
+          "title": "Ukraine’s new drone is a cousin to America’s stealth bombers",
+          "source": "Euromaidan Press",
+          "platform": "Media",
+          "published_at": "2026-08-06T12:00:00+00:00",
+          "where": "data/mentions_curated.json",
+          "curated": true,
+          "excluded_by": null
+        },
+        {
+          "id": "8494f4e11e6a7c965d4930feacc0d9682c6493a749e610f5fc16699b33f92a6e",
+          "title": "Ukraine’s new drone is a cousin to America’s stealth bombers. It reaches Ufa in three hours. - Euromaidan Press",
+          "source": "Euromaidan Press",
+          "platform": "Media",
+          "published_at": "2026-08-06T07:00:00+00:00",
+          "where": "mentions.json",
+          "curated": false,
+          "excluded_by": null
+        }
+      ]
+    },
+    {
+      "type": "shared_link",
       "link": "militarnyi.com/en/blogs/eurosatory-2026-is-europe-ready-for-modern-war",
       "action": "review by a person: both records are kept, nothing was deleted or merged",
       "records": [

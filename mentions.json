@@ -133,6 +133,35 @@
     "platform": "Media"
   },
   {
+    "id": "8494f4e11e6a7c965d4930feacc0d9682c6493a749e610f5fc16699b33f92a6e",
+    "title": "Ukraine’s new drone is a cousin to America’s stealth bombers. It reaches Ufa in three hours. - Euromaidan Press",
+    "source": "Euromaidan Press",
+    "url": "https://euromaidanpress.com/2026/08/06/ukraines-new-drone-is-a-cousin-to-americas-stealth-bombers-it-reaches-ufa-in-three-hours/",
+    "published_at": "2026-08-06T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\"",
+      "\"Veselov\" \"Triada Robotics\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "CEO",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "vid Axe 06/08/2026 5 minute read Follow Euromaidan Press on Google News \r\n\t\t\t\t\t\tTriada Robotics Bravo. Triada Robotics art.\t\t\t\t\t Ukraine’s new drone is a cousin to America’s stealth bombers. It reaches Ufa in three",
+    "verification_method": "article_body",
+    "direct_url": "https://euromaidanpress.com/2026/08/06/ukraines-new-drone-is-a-cousin-to-americas-stealth-bombers-it-reaches-ufa-in-three-hours/"
+  },
+  {
     "id": "d8cb9e298459a3256c23c877abd0ba1d1efa60ec26e9fd8f757ac8f3b752e2a7",
     "title": "Triada Robotics’ “Bravo”: Can It Catch Up to Russia? - Militär Aktuell",
     "source": "Militär Aktuell",
@@ -306,6 +335,33 @@
     "matched_text": "ий український реактивний ударний  дрон Bravo Deep-Strike UAV Platform компанії Triada Robotics , проте офіційного підтвердження поки що немає. На опублікованих кадрах апарат має незвичайну форму та, ймовірно, оснащ",
     "verification_method": "article_body",
     "direct_url": "https://novosti-n.org/ua/news/Tayemnychyj-dron-nad-Ufoyu-eksperty-porivnyaly-jogo-z-F-117-ta-ukrayinskym-Bravo-342919"
+  },
+  {
+    "id": "faa5939422632f5c8896ac754af4401d1e3e6a4096b7d559598e974a20b545f8",
+    "title": "Mystery drone resembling America’s F-117 stealth jet filmed over a Russian refinery - Euromaidan Press",
+    "source": "Euromaidan Press",
+    "url": "https://euromaidanpress.com/2026/08/04/mystery-drone-resembling-americas-f-117-stealth-jet-filmed-over-a-russian-refinery/",
+    "published_at": "2026-08-04T07:00:00+00:00",
+    "keyword": "\"Triada Robotics\"",
+    "status": "relevant",
+    "matched_queries": [
+      "\"BRAVO\" \"Triada Robotics\"",
+      "\"TRIADA ROBOTICS\" BRAVO",
+      "\"TRIADA ROBOTICS\" KILO",
+      "\"Triada Robotics\"",
+      "\"Triada\" \"BRAVO\""
+    ],
+    "platform": "Media",
+    "categories": [
+      "Company",
+      "Products"
+    ],
+    "products": [
+      "BRAVO"
+    ],
+    "matched_text": "es What the Bravo could do, and why it would matter If the aircraft is indeed a Triada Robotics product, the company describes  Bravo  as a single-use, jet-powered drone intended for long-range strike missions. Acco",
+    "verification_method": "article_body",
+    "direct_url": "https://euromaidanpress.com/2026/08/04/mystery-drone-resembling-americas-f-117-stealth-jet-filmed-over-a-russian-refinery/"
   },
   {
     "id": "2568103afc4818f1c73d42bd27aec62e9df970717ef17bf1a2ff1a79a451aca6",

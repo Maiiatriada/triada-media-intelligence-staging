@@ -142,41 +142,6 @@
     "platform": "Media"
   },
   {
-    "id": "8494f4e11e6a7c965d4930feacc0d9682c6493a749e610f5fc16699b33f92a6e",
-    "title": "Ukraine’s new drone is a cousin to America’s stealth bombers. It reaches Ufa in three hours. - Euromaidan Press",
-    "source": "Euromaidan Press",
-    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQeC1kTzI5MENRSm02ZlBWSjIwV3c5ZmtleFQwUWdOYjhsdGhCa2E3b2xvV01UZ2NnSkFrTXRpNFR0V3RsbDBwemp5Q1ZmU0pYSXZiYUlJcGlHbk1WVG1WMjBxZjF0Z2JaRG1aZnExbkhDUlE2V0NEc1BiekJjOGdjbThoSFdSTXh6MXJMMnlTZU9pckxZQV9keUMzd1FRdDg1SURGY1l4S2JELTR6MjBtdXdqcXNIbU96NzhoSE4xZU9ZaFlhbnMw?oc=5",
-    "published_at": "2026-08-06T07:00:00+00:00",
-    "keyword": "\"Triada Robotics\"",
-    "status": "review",
-    "matched_queries": [
-      "\"BRAVO\" \"Triada Robotics\"",
-      "\"TRIADA ROBOTICS\" BRAVO",
-      "\"TRIADA ROBOTICS\" KILO",
-      "\"Triada Robotics\"",
-      "\"Triada\" \"BRAVO\"",
-      "\"Veselov\" \"Triada Robotics\""
-    ],
-    "platform": "Media"
-  },
-  {
-    "id": "faa5939422632f5c8896ac754af4401d1e3e6a4096b7d559598e974a20b545f8",
-    "title": "Mystery drone resembling America’s F-117 stealth jet filmed over a Russian refinery - Euromaidan Press",
-    "source": "Euromaidan Press",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxON0lFVktqUnI2REl0LVZRUmpJSFYwdV9DaW50cTdOcEdTQVU3Yk5EcVBIM3RDa1dPOWJmV0VpRGdGUXJyT3NTaFExUE5zM0g2U0dYMVJoZldkLVVpSjR6eEp0eTJYY2d0LWE0ekIzRXBNeTZHaVBlZkNqUWhVZUIwVkpPR0VWYmtiMk1VTTU0RXpDcTY0Y1pZdkJXM055dTBZOGthS2pFbURfNzYyM3p6RllmVVZCcjQwbDY2T0tzOA?oc=5",
-    "published_at": "2026-08-04T07:00:00+00:00",
-    "keyword": "\"Triada Robotics\"",
-    "status": "review",
-    "matched_queries": [
-      "\"BRAVO\" \"Triada Robotics\"",
-      "\"TRIADA ROBOTICS\" BRAVO",
-      "\"TRIADA ROBOTICS\" KILO",
-      "\"Triada Robotics\"",
-      "\"Triada\" \"BRAVO\""
-    ],
-    "platform": "Media"
-  },
-  {
     "id": "0819c114199e113ac887ce34adadcec065146622898b98e70b629f4a96f922a9",
     "title": "Загадковий дрон атакував НПЗ в Уфі: його порівняли з американським F-117 - Експерт",
     "source": "Експерт",
@@ -366,6 +331,7 @@
     "matched_queries": [
       "\"Artem Veselov\"",
       "\"Artem Veselov\" \"drone\"",
+      "\"Triada Robotics\"",
       "\"Veselov\" \"Triada Robotics\""
     ],
     "status": "review",
